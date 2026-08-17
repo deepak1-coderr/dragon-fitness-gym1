@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>THE DRAGON FITNESS CENTER | Premium Fitness in Janakpur</title>
+<meta name="description" content="Premium fitness center in Janakpur. Strength training, CrossFit, fat loss coaching, personal training, expert trainers, and an in-store supplement shop.">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>document.documentElement.classList.add('js-ready');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#0b0b0b;
+    --ink-rgb: 11,11,11;
+    --charcoal:#151512;
+    --charcoal-2:#1c1c18;
+    --line: rgba(212,175,55,0.16);
+    --gold:#d4af37;
+    --gold-bright:#f2cf6b;
+    --gold-rgb: 212,175,55;
+    --ember:#ff6a2c;
+    --cream:#f3efe6;
+    --muted:#9a9686;
+    --muted-2:#75705f;
+    --good:#4ade80;
+    --warn:#facc15;
+    --bad:#f87171;
+  }
+  html[data-theme="light"]{
+    --ink:#f6f3ea;
+    --ink-rgb: 246,243,234;
+    --charcoal:#ffffff;
+    --charcoal-2:#f1ede1;
+    --line: rgba(180,140,30,0.25);
+    --gold:#b8860b;
+    --gold-bright:#d4af37;
+    --gold-rgb: 184,134,11;
+    --ember:#e35a1e;
+    --cream:#1a1712;
+    --muted:#5c5748;
+    --muted-2:#83806f;
+  }
+  *{scroll-behavior:smooth; box-sizing:border-box;}
+  html.js-ready{scroll-behavior:smooth;}
+  html{ -webkit-text-size-adjust:100%; }
+  body{
+    background:var(--ink); color:var(--cream); font-family:'Work Sans',sans-serif;
+    overflow-x:hidden; position:relative; transition: background-color .4s ease, color .4s ease;
+  }
+  .font-display{font-family:'Anton',sans-serif; letter-spacing:0.01em;}
+  .font-mono{font-family:'JetBrains Mono',monospace;}
+  .text-gold{color:var(--gold);}
+  .text-gold-bright{color:var(--gold-bright);}
+  .bg-gold{background-color:var(--gold);}
+  .bg-ink{background-color:var(--ink); transition: background-color .4s ease;}
+  .bg-ink-90{background-color: rgba(var(--ink-rgb), 0.9); transition: background-color .4s ease;}
+  .bg-charcoal{background-color:var(--charcoal); transition: background-color .4s ease;}
+  .bg-charcoal-2{background-color:var(--charcoal-2); transition: background-color .4s ease;}
+  .border-line{border-color:var(--line); transition: border-color .4s ease;}
+  .text-zinc-300{ color: color-mix(in srgb, var(--cream) 78%, transparent); }
+  .text-zinc-400{ color: var(--muted); }
+  .text-zinc-500{ color: var(--muted-2); }
+  .text-zinc-600{ color: var(--muted-2); opacity:.8; }
+
+  body::before{
+    content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:
+      radial-gradient(ellipse 900px 560px at 12% -8%, rgba(var(--gold-rgb),0.13), transparent 60%),
+      radial-gradient(ellipse 760px 540px at 108% 22%, rgba(255,106,44,0.09), transparent 60%),
+      radial-gradient(ellipse 820px 620px at 46% 108%, rgba(var(--gold-rgb),0.08), transparent 60%),
+      radial-gradient(ellipse 600px 400px at 85% 90%, rgba(255,106,44,0.06), transparent 60%);
+    transition: opacity .4s ease;
+  }
+  html[data-theme="light"] body::before{ opacity:0.55; }
+  body::after{
+    content:""; position:fixed; inset:0; z-index:1; pointer-events:none; opacity:0.035; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  html[data-theme="light"] body::after{ opacity:0.02; }
+  .stripe-accent{ background-image: repeating-linear-gradient(115deg, rgba(var(--gold-rgb),0.05) 0 2px, transparent 2px 44px); }
+  main, header, footer, section, #cursorGlow{ position:relative; z-index:2; }
+
+  #cursorGlow{
+    position:fixed; inset:0; pointer-events:none; z-index:3; will-change:background;
+    background:
+      radial-gradient(480px circle at var(--mx,50%) var(--my,50%), rgba(var(--gold-rgb),0.11), transparent 62%),
+      radial-gradient(180px circle at var(--mx,50%) var(--my,50%), rgba(242,207,107,0.06), transparent 70%);
+  }
+  @media (max-width: 768px){ #cursorGlow{ display:none; } }
+
+  .ember-dot{ position:absolute; bottom:-10px; width:4px; height:4px; border-radius:50%; background: var(--ember); opacity:0.7; filter: blur(0.5px); animation: emberRise linear infinite; }
+  @keyframes emberRise{ 0%{ transform: translateY(0) translateX(0); opacity:0; } 10%{ opacity:.8; } 100%{ transform: translateY(-620px) translateX(20px); opacity:0; } }
+
+  .foil-divider{ height:3px; width:100%; background: repeating-linear-gradient(115deg, var(--gold) 0 18px, transparent 18px 26px, var(--ember) 26px 30px, transparent 30px 38px); opacity:0.5; }
+
+  .reveal{ opacity:0; will-change: opacity, transform; transition: opacity .8s cubic-bezier(.19,1,.22,1), transform .8s cubic-bezier(.19,1,.22,1); }
+  .reveal[data-reveal="left"]{ transform: translateX(-44px); }
+  .reveal[data-reveal="right"]{ transform: translateX(44px); }
+  .reveal[data-reveal="up"]{ transform: translateY(30px); }
+  .reveal[data-reveal="scale"]{ transform: scale(0.94); }
+  html.js-ready .reveal.in{ opacity:1; transform: translate(0,0) scale(1); }
+  html:not(.js-ready) .reveal{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1 !important; transform:none !important; transition:none !important; } .ember-dot{ display:none; } }
+
+  .cut-corner{ clip-path: polygon(0 0, 100% 0, 100% 88%, 92% 100%, 0 100%); }
+  .cut-corner-sm{ clip-path: polygon(0 0, 100% 0, 100% 92%, 95% 100%, 0 100%); }
+
+  .glass{ background: rgba(var(--ink-rgb),0.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--line); }
+
+  .btn-gold{ background: linear-gradient(100deg, var(--gold), var(--gold-bright)); color:#0b0b0b; }
+  .btn-gold:hover{ filter: brightness(1.08); box-shadow: 0 0 34px -4px rgba(var(--gold-rgb),0.55); }
+
+  .card-hover{ transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease; }
+  .card-hover:hover, .card-hover:active{ transform: translateY(-6px); border-color: rgba(var(--gold-rgb),0.45); box-shadow: 0 18px 40px -18px rgba(var(--gold-rgb),0.28); }
+
+  .glow-card{ transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
+  .glow-card:hover{ transform: translateY(-5px); box-shadow: 0 0 0 1px rgba(var(--gold-rgb),0.35), 0 20px 45px -20px rgba(var(--gold-rgb),0.45); border-color: rgba(var(--gold-rgb),0.5); }
+
+  .eyebrow{ font-family:'JetBrains Mono',monospace; font-size:0.72rem; letter-spacing:0.28em; text-transform:uppercase; color: var(--gold); }
+
+  ::-webkit-scrollbar{ width:9px; } ::-webkit-scrollbar-track{ background: var(--ink); } ::-webkit-scrollbar-thumb{ background:#3a3a32; border-radius:8px; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{ outline: 2px solid var(--gold); outline-offset: 3px; }
+
+  .marquee-track{ display:flex; width:max-content; animation: marquee 22s linear infinite; }
+  @keyframes marquee{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+  .nav-link{ position:relative; } .nav-link::after{ content:""; position:absolute; left:0; bottom:-6px; width:0%; height:2px; background:var(--gold); transition: width .25s ease; }
+  .nav-link.active::after, .nav-link:hover::after{ width:100%; }
+
+  .count-up{ font-variant-numeric: tabular-nums; }
+  .plan-card{ transition: transform .35s ease, box-shadow .35s ease; } .plan-card:hover{ transform: translateY(-8px); }
+  .tag-instore{ font-family:'JetBrains Mono',monospace; font-size:0.65rem; letter-spacing:0.08em; text-transform:uppercase; }
+
+  .float-btn{ box-shadow: 0 10px 30px -8px rgba(0,0,0,0.6); }
+  .float-btn:hover{ transform: translateY(-3px); }
+  .float-label{ max-width:0; opacity:0; overflow:hidden; white-space:nowrap; transition: max-width .3s ease, opacity .3s ease, padding .3s ease; }
+  .float-wrap:hover .float-label{ max-width:160px; opacity:1; padding-left:.75rem; padding-right:1rem; }
+  .pulse-ring{ animation: pulseRing 2.4s ease-out infinite; }
+  @keyframes pulseRing{ 0%{ box-shadow: 0 0 0 0 rgba(37,211,102,0.45); } 70%{ box-shadow: 0 0 0 14px rgba(37,211,102,0); } 100%{ box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
+
+  .theme-switch{ position:relative; width:52px; height:28px; border-radius:999px; flex-shrink:0; background: var(--charcoal-2); border:1px solid var(--line); cursor:pointer; transition: background-color .35s ease, border-color .35s ease; }
+  .theme-switch-knob{ position:absolute; top:2px; left:2px; width:22px; height:22px; border-radius:50%; background: linear-gradient(135deg, var(--gold), var(--gold-bright)); display:flex; align-items:center; justify-content:center; color:#0b0b0b; transition: transform .35s cubic-bezier(.34,1.56,.64,1); }
+  html[data-theme="light"] .theme-switch-knob{ transform: translateX(24px); }
+  .theme-switch-knob svg{ width:13px; height:13px; }
+
+  .rule-num{ font-family:'Anton',sans-serif; font-size:2.75rem; line-height:1; color: var(--gold); opacity:0.28; }
+
+  .gallery-item{ position:relative; overflow:hidden; border-radius:1rem; border:1px solid var(--line); transition: border-color .4s ease, box-shadow .4s ease; }
+  .gallery-item img{ transition: transform .6s cubic-bezier(.16,.84,.44,1), filter .4s ease; }
+  .gallery-item:hover img, .gallery-item:active img{ transform: scale(1.1); filter: brightness(1.05); }
+  .gallery-item:hover, .gallery-item:active{ border-color: rgba(var(--gold-rgb),0.6); box-shadow: 0 0 0 1px rgba(var(--gold-rgb),0.3), 0 22px 44px -18px rgba(var(--gold-rgb),0.4); }
+  .gallery-item::after{ content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.55), transparent 45%); opacity:0; transition:opacity .4s ease; }
+  .gallery-item:hover::after, .gallery-item:active::after{ opacity:1; }
+
+  .exp-badge{ font-family:'JetBrains Mono',monospace; font-size:0.68rem; letter-spacing:.05em; }
+
+  .calc-tab{ transition: color .25s ease, border-color .25s ease, background-color .25s ease; }
+  .calc-tab[aria-selected="true"]{ color:#0b0b0b; background:var(--gold); border-color:var(--gold); }
+  .calc-panel{ display:none; }
+  .calc-panel.active{ display:block; }
+  .calc-input{ background: var(--charcoal-2); border:1px solid var(--line); color:var(--cream); }
+  .calc-input::placeholder{ color: var(--muted-2); }
+  .result-chip{ font-family:'JetBrains Mono',monospace; }
+
+  .star-input{ display:flex; flex-direction:row-reverse; justify-content:flex-end; gap:.25rem; }
+  .star-input input{ display:none; }
+  .star-input label{ font-size:1.9rem; line-height:1; color: var(--muted-2); cursor:pointer; transition: color .15s ease, transform .15s ease; }
+  .star-input label:hover, .star-input label:hover ~ label{ color: var(--gold); transform: scale(1.08); }
+  .star-input input:checked ~ label{ color: var(--gold); }
+
+  .testimonial-stars svg{ width:15px; height:15px; }
+
+  footer .social-circle{ width:44px; height:44px; border-radius:9999px; display:flex; align-items:center; justify-content:center; border:1px solid var(--line); transition: all .3s ease; }
+  footer .social-circle:hover{ border-color: var(--gold); box-shadow: 0 0 22px -4px rgba(var(--gold-rgb),0.55); transform: translateY(-3px); }
+
+  @media (max-width: 380px){ .font-display{ letter-spacing:0; } }
+</style>
+</head>
+
+<body class="antialiased">
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 17a2.5 2.5 0 0 0 2.5-2.5c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7.5 7.5 0 1 1-15 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+  <symbol id="i-dumbbell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6.5 6.5 11 11M21 21l-1.5-1.5M18 18l-2.5-2.5M6.5 6.5 5 5M8.5 8.5 6 6M18 18l-3-3M15.5 15.5l-7-7M8.5 8.5l7 7M3 3l2 2M19 19l2 2"/></symbol>
+  <symbol id="i-heart-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.5 4.04 3 5.5l7 7Z"/><path d="M3.5 9h4l1.5-3 2.5 6 1.5-3h4"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7 2 13a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0zM3 7h4M17 7h4M12 3l5 4M12 3 7 7"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h8l-1 8 10-12h-8z"/></symbol>
+  <symbol id="i-salad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9ZM12 8V3m0 0-2 2m2-2 2 2M8 8l-1.5-2M16 8l1.5-2"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9" r="3"/><path d="M15.2 12.5A6.5 6.5 0 0 1 21.5 19"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="m9 13.5-1.5 7L12 18l4.5 2.5-1.5-7"/></symbol>
+  <symbol id="i-user-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="8" r="4"/><path d="M2.5 21a7.5 7.5 0 0 1 15 0"/><path d="m17 11 2 2 4-4"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94z"/></symbol>
+  <symbol id="i-tiktok" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82c-1-.89-1.6-2.14-1.6-3.52h-3.02v13.86a2.7 2.7 0 1 1-1.91-2.58V10.5a5.72 5.72 0 1 0 4.93 5.66V9.29a6.87 6.87 0 0 0 4 1.29V7.55c-.7 0-1.75-.28-2.4-.73-.5-.35-1-.62-1-1z"/></symbol>
+  <symbol id="i-youtube" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8ZM9.6 15.5v-7l6.3 3.5-6.3 3.5Z"/></symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M20.52 3.449C12.831-3.984.106 1.407.101 11.892c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652a11.882 11.882 0 0 0 5.683 1.448h.005c9.548 0 15.795-9.965 11.893-17.53a11.99 11.99 0 0 0-3.396-2.817zM12.023 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.259c.004-5.448 4.436-9.879 9.888-9.879 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.448-4.435 9.879-9.885 9.879z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1.5 14h-15z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-11 11M22 2l-7 20-4-9-9-4z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l3.09 6.26 6.91 1-5 4.87 1.18 6.87L12 17.77l-6.18 3.73L7 14.63l-5-4.87 6.91-1z"/></symbol>
+  <symbol id="i-star-outline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 2.5l3.09 6.26 6.91 1-5 4.87 1.18 6.87L12 17.77l-6.18 3.73L7 14.63l-5-4.87 6.91-1z"/></symbol>
+  <symbol id="i-quote" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5C4 6.5 2.5 9 2.5 12.5c0 3.5 2 5.5 4.5 5.5 2 0 3.5-1.5 3.5-3.5 0-1.8-1.3-3.2-3-3.4C7.7 8.3 9 6.3 11.5 5.3L7 5Zm10 0c-3 1.5-4.5 4-4.5 7.5 0 3.5 2 5.5 4.5 5.5 2 0 3.5-1.5 3.5-3.5 0-1.8-1.3-3.2-3-3.4-.2-2.8 1.1-4.8 3.5-5.8L17 5Z"/></symbol>
+  <symbol id="i-droplet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7s6.5 7 6.5 11.5a6.5 6.5 0 1 1-13 0C5.5 9.7 12 2.7 12 2.7Z"/></symbol>
+  <symbol id="i-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-2h6l2 2h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z"/><circle cx="12" cy="14" r="3.5"/></symbol>
+</svg>
+
+<div id="cursorGlow"></div>
+
+<!-- ================= ANNOUNCEMENT TICKER ================= -->
+<div class="relative z-[60] bg-charcoal border-b border-line overflow-hidden py-2">
+  <div class="marquee-track font-mono text-xs sm:text-sm tracking-wide text-gold">
+    <span class="px-8 flex items-center gap-2 whitespace-nowrap"><svg class="w-3.5 h-3.5"><use href="#i-flame"/></svg> Special Offer: Join now and get exciting perks on memberships!</span>
+    <span class="px-8 flex items-center gap-2 whitespace-nowrap"><svg class="w-3.5 h-3.5"><use href="#i-flame"/></svg> Free protein on 3-month plans and above &mdash; limited time!</span>
+    <span class="px-8 flex items-center gap-2 whitespace-nowrap"><svg class="w-3.5 h-3.5"><use href="#i-flame"/></svg> Special Offer: Join now and get exciting perks on memberships!</span>
+    <span class="px-8 flex items-center gap-2 whitespace-nowrap"><svg class="w-3.5 h-3.5"><use href="#i-flame"/></svg> Free protein on 3-month plans and above &mdash; limited time!</span>
+  </div>
+</div>
+
+<!-- ================= NAVIGATION ================= -->
+<header id="navbar" class="sticky top-0 z-50 transition-all duration-300 bg-ink-90 backdrop-blur border-b border-line">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-3 sm:py-3.5 flex items-center justify-between gap-2">
+    <a href="#top" class="flex items-center gap-2 shrink-0 min-w-0">
+      <svg class="w-7 h-7 sm:w-8 sm:h-8 text-gold shrink-0" viewBox="0 0 24 24"><use href="#i-flame"/></svg>
+      <span class="font-display text-sm sm:text-lg md:text-xl tracking-wide leading-none whitespace-nowrap truncate">THE DRAGON <span class="text-gold">FITNESS</span></span>
+    </a>
+
+    <div class="hidden xl:flex items-center gap-6 font-mono text-xs uppercase tracking-widest text-zinc-300">
+      <a href="#top" class="nav-link active hover:text-gold transition">Home</a>
+      <a href="#why" class="nav-link hover:text-gold transition">Why Us</a>
+      <a href="#about" class="nav-link hover:text-gold transition">About</a>
+      <a href="#membership" class="nav-link hover:text-gold transition">Membership</a>
+      <a href="#trainers" class="nav-link hover:text-gold transition">Trainers</a>
+      <a href="#tools" class="nav-link hover:text-gold transition">Tools</a>
+      <a href="#gallery" class="nav-link hover:text-gold transition">Gallery</a>
+      <a href="#shop" class="nav-link hover:text-gold transition">Products</a>
+      <a href="#contact" class="nav-link hover:text-gold transition">Contact</a>
+    </div>
+
+    <div class="flex items-center gap-2 sm:gap-3">
+      <button id="themeToggle" class="theme-switch" role="switch" aria-checked="false" aria-label="Toggle light and dark mode">
+        <span class="theme-switch-knob">
+          <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </span>
+      </button>
+
+      <a href="#membership" class="hidden md:inline-flex items-center gap-2 btn-gold font-bold text-xs sm:text-sm px-4 sm:px-6 py-2 sm:py-2.5 rounded-full transition-all duration-300 whitespace-nowrap">
+        JOIN NOW <svg class="w-4 h-4"><use href="#i-arrow-right"/></svg>
+      </a>
+
+      <button id="menuBtn" class="xl:hidden text-current shrink-0" aria-label="Open menu" aria-expanded="false">
+        <svg class="w-6 h-6 sm:w-7 sm:h-7"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div id="mobileMenu" class="hidden xl:hidden bg-charcoal border-t border-line px-6 py-6 flex flex-col gap-4 font-mono text-sm uppercase tracking-widest max-h-[75vh] overflow-y-auto">
+    <a href="#top" class="mobile-link">Home</a>
+    <a href="#why" class="mobile-link">Why Us</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#membership" class="mobile-link">Membership</a>
+    <a href="#trainers" class="mobile-link">Trainers</a>
+    <a href="#tools" class="mobile-link">Tools</a>
+    <a href="#gallery" class="mobile-link">Gallery</a>
+    <a href="#shop" class="mobile-link">Products</a>
+    <a href="#rules" class="mobile-link">Rules</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <a href="#membership" class="inline-flex items-center justify-center gap-2 btn-gold font-bold px-5 py-3 rounded-full mt-2">JOIN NOW</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="top" class="relative overflow-hidden pt-10 pb-16 sm:pt-14 sm:pb-20 md:min-h-[92vh] md:flex md:items-center">
+  <div class="absolute inset-0 -z-[5] overflow-hidden pointer-events-none hidden sm:block">
+    <span class="ember-dot" style="left:8%; animation-duration:7s; animation-delay:0s;"></span>
+    <span class="ember-dot" style="left:22%; animation-duration:9s; animation-delay:1.5s;"></span>
+    <span class="ember-dot" style="left:41%; animation-duration:6.5s; animation-delay:3s;"></span>
+    <span class="ember-dot" style="left:63%; animation-duration:8s; animation-delay:0.8s;"></span>
+    <span class="ember-dot" style="left:78%; animation-duration:7.5s; animation-delay:2.2s;"></span>
+    <span class="ember-dot" style="left:90%; animation-duration:6s; animation-delay:4s;"></span>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 w-full grid md:grid-cols-[1.1fr_0.9fr] gap-8 md:gap-14 items-center">
+    <div class="order-2 md:order-1">
+      <div class="reveal" data-reveal="up">
+        <span class="eyebrow">Janakpur &middot; Premium Fitness Floor</span>
+      </div>
+      <h1 class="reveal font-display text-[2.6rem] leading-[0.98] sm:text-6xl md:text-7xl lg:text-[5rem] md:leading-[0.95] mt-4 mb-5 md:mb-6" data-reveal="left">
+        FIT<br>OR FAT.<br><span class="text-gold">ITS</span><br>YOUR CHOICE.
+      </h1>
+      <p class="reveal text-zinc-300 text-base md:text-lg max-w-lg mb-8 md:mb-9 leading-relaxed" data-reveal="up" style="transition-delay:.1s">
+        The ultimate premium fitness experience in Janakpur &mdash; certified coaching, modern equipment, and results that speak for themselves.
+      </p>
+      <div class="reveal flex flex-col sm:flex-row gap-3 sm:gap-4" data-reveal="up" style="transition-delay:.2s">
+        <a href="#membership" class="inline-flex items-center justify-center gap-2 btn-gold font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all duration-300 text-sm uppercase tracking-wide">
+          Join Membership <svg class="w-4 h-4"><use href="#i-arrow-right"/></svg>
+        </a>
+        <a href="#membership-plans" class="inline-flex items-center justify-center gap-2 border border-zinc-600 hover:border-gold text-current font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all duration-300 text-sm uppercase tracking-wide">
+          View Plans
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal order-1 md:order-2 relative" data-reveal="right">
+      <div class="relative rounded-2xl overflow-hidden cut-corner border border-line">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=75" alt="Premium gym atmosphere at Dragon Fitness Center" class="w-full h-[280px] xs:h-[320px] sm:h-[400px] md:h-[540px] object-cover" loading="eager">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+      </div>
+      <div class="absolute -bottom-5 -left-3 sm:-bottom-6 sm:-left-6 glass rounded-2xl px-4 py-3 sm:px-5 sm:py-4 flex items-center gap-3">
+        <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-gold/15 flex items-center justify-center shrink-0">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gold"><use href="#i-clock"/></svg>
+        </div>
+        <div class="text-xs sm:text-sm leading-tight">
+          <p class="font-bold" style="color:var(--cream)">Open 5 AM &ndash; 9 PM</p>
+          <p class="text-zinc-400 font-mono text-[10px] sm:text-xs">Sunday &ndash; Friday</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="foil-divider"></div>
+
+<!-- ================= STATS ================= -->
+<section class="py-12 sm:py-16 bg-charcoal border-b border-line">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-line">
+    <div class="reveal py-5 sm:py-0 text-center" data-reveal="up">
+      <div class="flex items-center justify-center gap-3 mb-2">
+        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-gold"><use href="#i-users"/></svg>
+        <p class="font-display text-4xl sm:text-5xl md:text-6xl count-up" data-target="1200" data-suffix="+">0</p>
+      </div>
+      <p class="font-mono text-xs uppercase tracking-widest text-zinc-400">Members Trained</p>
+    </div>
+    <div class="reveal py-5 sm:py-0 text-center" data-reveal="up" style="transition-delay:.1s">
+      <div class="flex items-center justify-center gap-3 mb-2">
+        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-gold"><use href="#i-user-check"/></svg>
+        <p class="font-display text-4xl sm:text-5xl md:text-6xl count-up" data-target="8" data-suffix="+">0</p>
+      </div>
+      <p class="font-mono text-xs uppercase tracking-widest text-zinc-400">Expert Trainers</p>
+    </div>
+    <div class="reveal py-5 sm:py-0 text-center" data-reveal="up" style="transition-delay:.2s">
+      <div class="flex items-center justify-center gap-3 mb-2">
+        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-gold"><use href="#i-award"/></svg>
+        <p class="font-display text-4xl sm:text-5xl md:text-6xl count-up" data-target="7" data-suffix="+">0</p>
+      </div>
+      <p class="font-mono text-xs uppercase tracking-widest text-zinc-400">Years of Experience</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+<section id="why" class="py-20 sm:py-24 md:py-32 bg-ink relative overflow-hidden stripe-accent">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-12 sm:mb-16 reveal" data-reveal="up">
+      <span class="eyebrow">The Dragon Difference</span>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl mt-3">WHY CHOOSE <span class="text-gold">THE DRAGON</span> FITNESS CENTER</h2>
+      <p class="text-zinc-400 mt-4 text-base sm:text-lg">Real results don't come from luck. They come from an environment built to push you, every single day.</p>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-5">
+      <div class="reveal glow-card bg-charcoal border border-line rounded-2xl p-5 sm:p-7" data-reveal="up">
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gold/15 flex items-center justify-center mb-4 sm:mb-5">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gold"><use href="#i-flame"/></svg>
+        </div>
+        <h3 class="font-bold text-sm sm:text-lg mb-1.5 sm:mb-2">Premium Environment</h3>
+        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">Air-conditioned, spotless, and designed for focus &mdash; not a warehouse with weights.</p>
+      </div>
+      <div class="reveal glow-card bg-charcoal border border-line rounded-2xl p-5 sm:p-7" data-reveal="up" style="transition-delay:.05s">
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gold/15 flex items-center justify-center mb-4 sm:mb-5">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gold"><use href="#i-user-check"/></svg>
+        </div>
+        <h3 class="font-bold text-sm sm:text-lg mb-1.5 sm:mb-2">Expert Trainers</h3>
+        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">Certified coaches who correct your form, not just count your reps.</p>
+      </div>
+      <div class="reveal glow-card bg-charcoal border border-line rounded-2xl p-5 sm:p-7" data-reveal="up" style="transition-delay:.1s">
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gold/15 flex items-center justify-center mb-4 sm:mb-5">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gold"><use href="#i-dumbbell"/></svg>
+        </div>
+        <h3 class="font-bold text-sm sm:text-lg mb-1.5 sm:mb-2">Modern Equipment</h3>
+        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">A full line of machines and free weights, maintained and upgraded regularly.</p>
+      </div>
+      <div class="reveal glow-card bg-charcoal border border-line rounded-2xl p-5 sm:p-7" data-reveal="up" style="transition-delay:.15s">
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gold/15 flex items-center justify-center mb-4 sm:mb-5">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gold"><use href="#i-shield"/></svg>
+        </div>
+        <h3 class="font-bold text-sm sm:text-lg mb-1.5 sm:mb-2">Hygiene First</h3>
+        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">Sanitized daily, with equipment-wipe stations across the floor.</p>
+      </div>
+      <div class="reveal glow-card bg-charcoal border border-line rounded-2xl p-5 sm:p-7" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gold/15 flex items-center justify-center mb-4 sm:mb-5">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gold"><use href="#i-scale"/></svg>
+        </div>
+        <h3 class="font-bold text-sm sm:text-lg mb-1.5 sm:mb-2">Flexible Plans</h3>
+        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">From monthly access to full personal training &mdash; a plan for every goal.</p>
+      </div>
+      <div class="reveal glow-card bg-charcoal border border-line rounded-2xl p-5 sm:p-7" data-reveal="up" style="transition-delay:.25s">
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gold/15 flex items-center justify-center mb-4 sm:mb-5">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gold"><use href="#i-users"/></svg>
+        </div>
+        <h3 class="font-bold text-sm sm:text-lg mb-1.5 sm:mb-2">Real Community</h3>
+        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">A floor full of people pushing each other &mdash; not just machines and mirrors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="foil-divider"></div>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="py-20 sm:py-24 md:py-32 bg-ink relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+      <div>
+        <div class="reveal" data-reveal="left">
+          <span class="eyebrow">Our Story</span>
+          <h2 class="font-display text-3xl sm:text-4xl md:text-5xl mt-3 leading-[1.02]">BUILT ON DISCIPLINE.<br>DRIVEN BY <span class="text-gold">RESULTS.</span></h2>
+        </div>
+        <div class="reveal mt-6 sm:mt-7 space-y-4 sm:space-y-5 text-zinc-300 leading-relaxed text-sm sm:text-base" data-reveal="left" style="transition-delay:.1s">
+          <p>THE DRAGON FITNESS CENTER was built for one purpose: to give Janakpur a training floor that matches the ambition of the people who walk onto it. No shortcuts, no gimmicks &mdash; just certified coaching, serious equipment, and a culture that expects effort.</p>
+          <p>Every member who joins us is training toward something specific, whether that's a first pull-up, a competition stage, or simply a stronger version of themselves.</p>
+        </div>
+        <blockquote class="reveal mt-7 sm:mt-8 pl-5 border-l-2 border-gold" data-reveal="left" style="transition-delay:.2s">
+          <p class="font-display text-xl sm:text-2xl md:text-3xl leading-snug">"We don't just build bodies. We build discipline that lasts a lifetime."</p>
+          <cite class="not-italic font-mono text-xs uppercase tracking-widest text-zinc-500 mt-3 block">&mdash; The Dragon Fitness Team</cite>
+        </blockquote>
+      </div>
+
+      <div class="reveal relative" data-reveal="right">
+        <div class="relative rounded-2xl overflow-hidden cut-corner border border-line">
+          <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=75" alt="Inside The Dragon Fitness Center training floor" class="w-full h-[300px] sm:h-[420px] md:h-[520px] object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+        </div>
+        <div class="absolute -bottom-6 -left-3 sm:-bottom-8 sm:-left-8 glass rounded-2xl p-4 sm:p-5 w-36 sm:w-48">
+          <p class="font-display text-3xl sm:text-4xl text-gold leading-none">7+</p>
+          <p class="font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-400 mt-2">Years Shaping Janakpur's Fitness Culture</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="foil-divider"></div>
+
+<!-- ================= HOURS & SERVICES ================= -->
+<section id="services" class="py-20 sm:py-24 md:py-32 bg-charcoal">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-12 sm:mb-16 reveal" data-reveal="up">
+      <span class="eyebrow">Everything You Need</span>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl mt-3">HOURS <span class="text-gold">&amp; SERVICES</span></h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-5 sm:gap-6">
+      <div class="reveal bg-charcoal-2 border border-line rounded-2xl p-6 sm:p-8 card-hover" data-reveal="left">
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gold/15 flex items-center justify-center mb-5 sm:mb-6">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gold"><use href="#i-clock"/></svg>
+        </div>
+        <h3 class="font-display text-xl sm:text-2xl mb-4 sm:mb-5 tracking-wide">OPERATING HOURS</h3>
+        <div class="space-y-3 text-sm">
+          <div class="flex justify-between border-b border-line pb-3">
+            <span class="text-zinc-400">Sunday &ndash; Friday</span>
+            <span class="font-semibold" style="color:var(--cream)">5:00 AM &ndash; 9:00 PM</span>
+          </div>
+          <div class="flex justify-between"><span class="text-zinc-400">Saturday</span><span class="text-gold font-semibold">Closed</span></div>
+        </div>
+      </div>
+      <div class="reveal bg-charcoal-2 border border-line rounded-2xl p-6 sm:p-8 card-hover" data-reveal="right" style="transition-delay:.1s">
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gold/15 flex items-center justify-center mb-5 sm:mb-6">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gold"><use href="#i-dumbbell"/></svg>
+        </div>
+        <h3 class="font-display text-xl sm:text-2xl mb-4 sm:mb-5 tracking-wide">OUR SERVICES</h3>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-zinc-300">
+          <li class="flex items-center gap-3"><svg class="w-4 h-4 text-gold shrink-0"><use href="#i-dumbbell"/></svg>Strength Training</li>
+          <li class="flex items-center gap-3"><svg class="w-4 h-4 text-gold shrink-0"><use href="#i-heart-pulse"/></svg>Cardio Zone</li>
+          <li class="flex items-center gap-3"><svg class="w-4 h-4 text-gold shrink-0"><use href="#i-scale"/></svg>Weight Loss / Gain</li>
+          <li class="flex items-center gap-3"><svg class="w-4 h-4 text-gold shrink-0"><use href="#i-zap"/></svg>CrossFit Zones</li>
+          <li class="flex items-center gap-3 sm:col-span-2"><svg class="w-4 h-4 text-gold shrink-0"><use href="#i-salad"/></svg>Professional Dietary Guidance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="foil-divider"></div>
+
+<!-- ================= TRAINERS ================= -->
+<section id="trainers" class="py-20 sm:py-24 md:py-32 bg-ink">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-12 sm:mb-16 reveal" data-reveal="up">
+      <span class="eyebrow">Meet The Coaches</span>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl mt-3">OUR EXPERT <span class="text-gold">TRAINERS</span></h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-6">
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=75" class="w-full h-64 sm:h-72 object-cover" alt="Strength coach" loading="lazy">
+          <span class="exp-badge absolute top-3 right-3 bg-gold text-black px-2.5 py-1 rounded-full font-bold">8+ YRS</span>
+        </div>
+        <div class="p-5 sm:p-6">
+          <h3 class="font-display text-lg sm:text-xl tracking-wide">TRAINER NAME</h3>
+          <p class="text-gold font-mono text-xs uppercase tracking-widest mt-1">Strength Coach</p>
+          <p class="text-zinc-400 text-xs sm:text-sm mt-3 leading-relaxed">Builds raw strength through progressive overload and meticulous form correction &mdash; patient with beginners, relentless with advanced lifters.</p>
+          <a href="#" class="inline-flex items-center gap-2 text-zinc-400 hover:text-gold text-sm mt-4 transition">
+            <svg class="w-4 h-4"><use href="#i-instagram"/></svg> @trainer.handle
+          </a>
+        </div>
+      </div>
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.1s">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?auto=format&fit=crop&w=600&q=75" class="w-full h-64 sm:h-72 object-cover" alt="CrossFit expert" loading="lazy">
+          <span class="exp-badge absolute top-3 right-3 bg-gold text-black px-2.5 py-1 rounded-full font-bold">6+ YRS</span>
+        </div>
+        <div class="p-5 sm:p-6">
+          <h3 class="font-display text-lg sm:text-xl tracking-wide">TRAINER NAME</h3>
+          <p class="text-gold font-mono text-xs uppercase tracking-widest mt-1">CrossFit Expert</p>
+          <p class="text-zinc-400 text-xs sm:text-sm mt-3 leading-relaxed">High-intensity functional coaching focused on mobility, power, and conditioning &mdash; sessions that never feel the same twice.</p>
+          <a href="#" class="inline-flex items-center gap-2 text-zinc-400 hover:text-gold text-sm mt-4 transition">
+            <svg class="w-4 h-4"><use href="#i-instagram"/></svg> @trainer.handle
+          </a>
+        </div>
+      </div>
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover sm:col-span-2 lg:col-span-1" data-reveal="up" style="transition-delay:.2s">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=600&q=75" class="w-full h-64 sm:h-72 object-cover" alt="Fat loss specialist" loading="lazy">
+          <span class="exp-badge absolute top-3 right-3 bg-gold text-black px-2.5 py-1 rounded-full font-bold">5+ YRS</span>
+        </div>
+        <div class="p-5 sm:p-6">
+          <h3 class="font-display text-lg sm:text-xl tracking-wide">TRAINER NAME</h3>
+          <p class="text-gold font-mono text-xs uppercase tracking-widest mt-1">Fat Loss Specialist</p>
+          <p class="text-zinc-400 text-xs sm:text-sm mt-3 leading-relaxed">Pairs cardio programming with real nutrition coaching &mdash; sustainable habits over crash diets, every time.</p>
+          <a href="#" class="inline-flex items-center gap-2 text-zinc-400 hover:text-gold text-sm mt-4 transition">
+            <svg class="w-4 h-4"><use href="#i-instagram"/></svg> @trainer.handle
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOUNDER / OWNER ================= -->
+<section id="founder" class="py-20 sm:py-24 md:py-32 bg-charcoal">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="reveal glass rounded-3xl p-6 sm:p-10 md:p-14 grid md:grid-cols-[0.8fr_1.2fr] gap-8 md:gap-12 items-center" data-reveal="scale">
+      <div class="relative mx-auto md:mx-0 w-48 h-48 sm:w-60 sm:h-60 md:w-full md:h-auto">
+        <div class="rounded-2xl overflow-hidden cut-corner-sm border border-line aspect-square">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=700&q=75" alt="Founder and owner of The Dragon Fitness Center" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <span class="absolute -bottom-4 left-1/2 -translate-x-1/2 md:left-4 md:translate-x-0 bg-gold text-black text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full whitespace-nowrap">Founder &amp; Owner</span>
+      </div>
+      <div class="text-center md:text-left">
+        <span class="eyebrow">Meet The Founder</span>
+        <h2 class="font-display text-3xl sm:text-4xl mt-3 mb-1">Mr. KARTIK SAH</h2>
+        <p class="text-gold font-mono text-xs uppercase tracking-widest mb-5">Founder &amp; Head of Vision, The Dragon Fitness Center</p>
+        <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-4">"I started Dragon Fitness because Janakpur deserved a gym that took training as seriously as the people who show up to do it. Every machine, every coach, every rule on this floor exists because I wanted a place I'd want to train at myself."</p>
+        <p class="text-zinc-400 text-sm leading-relaxed">Today, that same standard drives everything we do &mdash; from the equipment we choose to the coaches we hire. This isn't just a business. It's a floor built on discipline, and I'm proud of every member who walks through that door.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="foil-divider"></div>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery" class="py-20 sm:py-24 md:py-32 bg-ink">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-12 sm:mb-16 reveal" data-reveal="up">
+      <span class="eyebrow">The Floor</span>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl mt-3">GALLERY</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+      <div class="gallery-item reveal" data-reveal="up"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=500&q=70" class="w-full h-40 sm:h-56 object-cover" loading="lazy" alt="Gym floor"></div>
+      <div class="gallery-item reveal" data-reveal="up" style="transition-delay:.05s"><img src="https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?auto=format&fit=crop&w=500&q=70" class="w-full h-40 sm:h-56 object-cover" loading="lazy" alt="Weight training"></div>
+      <div class="gallery-item reveal" data-reveal="up" style="transition-delay:.1s"><img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=500&q=70" class="w-full h-40 sm:h-56 object-cover" loading="lazy" alt="CrossFit zone"></div>
+      <div class="gallery-item reveal" data-reveal="up" style="transition-delay:.15s"><img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=500&q=70" class="w-full h-40 sm:h-56 object-cover" loading="lazy" alt="Personal training"></div>
+      <div class="gallery-item reveal" data-reveal="up" style="transition-delay:.2s"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=500&q=70" class="w-full h-40 sm:h-56 object-cover" loading="lazy" alt="Gym interior"></div>
+      <div class="gallery-item reveal" data-reveal="up" style="transition-delay:.25s"><img src="https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=500&q=70" class="w-full h-40 sm:h-56 object-cover" loading="lazy" alt="Cardio zone"></div>
+      <div class="gallery-item reveal" data-reveal="up" style="transition-delay:.3s"><img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?auto=format&fit=crop&w=500&q=70" class="w-full h-40 sm:h-56 object-cover" loading="lazy" alt="Member training"></div>
+      <div class="gallery-item reveal" data-reveal="up" style="transition-delay:.35s"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=500&q=70" class="w-full h-40 sm:h-56 object-cover" loading="lazy" alt="Athlete workout"></div>
+    </div>
+  </div>
+</section>
+
+<div class="foil-divider"></div>
+
+<!-- ================= VIDEO GALLERY / GYM TOUR HIGHLIGHTS ================= -->
+<section id="video-gallery" class="py-20 sm:py-24 md:py-32 bg-charcoal">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-12 sm:mb-16 reveal" data-reveal="up">
+      <span class="eyebrow">See It In Motion</span>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl mt-3">VIDEO GALLERY <span class="text-gold">&amp; GYM TOUR</span></h2>
+      <p class="text-zinc-400 mt-4 text-base sm:text-lg">A closer look at the floor, the energy, and the training you'll be part of.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+      <div class="reveal bg-charcoal-2 border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up">
+        <div class="relative aspect-video">
+          <video class="w-full h-full object-cover" controls muted loop playsinline preload="metadata"
+                 poster="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=70">
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+
+        <div class="p-5">
+          <h3 class="font-bold text-base sm:text-lg mb-1">Trainer Spotlight</h3>
+          <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">A day with our coaches &mdash; real sessions, real form correction.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<div class="foil-divider"></div>
+
+<!-- ================= KNOW YOUR NUMBERS (CALCULATORS) ================= -->
+<section id="tools" class="py-20 sm:py-24 md:py-32 bg-charcoal">
+  <div class="max-w-5xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-10 sm:mb-14 reveal" data-reveal="up">
+      <span class="eyebrow">Free Tools</span>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl mt-3">KNOW YOUR <span class="text-gold">NUMBERS</span></h2>
+      <p class="text-zinc-400 mt-4">Quick estimates to help you train smarter. For guidance only &mdash; not medical advice.</p>
+    </div>
+
+    <div class="reveal bg-charcoal-2 border border-line rounded-3xl p-5 sm:p-8 md:p-10" data-reveal="scale">
+      <div role="tablist" class="flex flex-wrap gap-2 mb-8">
+        <button type="button" class="calc-tab" role="tab" aria-selected="true" data-tab="bmi" onclick="switchCalcTab('bmi')" style="padding:.6rem 1.1rem; border-radius:999px; border:1px solid var(--line); font-family:'JetBrains Mono',monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.06em;">BMI Calculator</button>
+        <button type="button" class="calc-tab" role="tab" aria-selected="false" data-tab="calorie" onclick="switchCalcTab('calorie')" style="padding:.6rem 1.1rem; border-radius:999px; border:1px solid var(--line); font-family:'JetBrains Mono',monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.06em;">Calorie / Diet</button>
+        <button type="button" class="calc-tab" role="tab" aria-selected="false" data-tab="water" onclick="switchCalcTab('water')" style="padding:.6rem 1.1rem; border-radius:999px; border:1px solid var(--line); font-family:'JetBrains Mono',monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.06em;">Water Intake</button>
+      </div>
+
+      <div id="panel-bmi" class="calc-panel active">
+        <div class="grid sm:grid-cols-2 gap-4 mb-6">
+          <div>
+            <label class="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2 block">Height (cm)</label>
+            <input id="bmiHeight" type="number" inputmode="decimal" placeholder="e.g. 170" class="calc-input w-full rounded-xl px-4 py-3 text-sm outline-none">
+          </div>
+          <div>
+            <label class="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2 block">Weight (kg)</label>
+            <input id="bmiWeight" type="number" inputmode="decimal" placeholder="e.g. 65" class="calc-input w-full rounded-xl px-4 py-3 text-sm outline-none">
+          </div>
+        </div>
+        <button type="button" onclick="calcBMI()" class="btn-gold font-bold rounded-full px-7 py-3 text-sm uppercase tracking-wide">Calculate BMI</button>
+        <div id="bmiResult" class="hidden mt-6 bg-charcoal border border-line rounded-2xl p-5 sm:p-6">
+          <p class="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-1">Your BMI</p>
+          <p id="bmiValue" class="font-display text-4xl sm:text-5xl text-gold"></p>
+          <p id="bmiCategory" class="result-chip inline-block mt-3 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide"></p>
+        </div>
+      </div>
+
+      <div id="panel-calorie" class="calc-panel">
+        <div class="grid sm:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label class="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2 block">Age</label>
+            <input id="calAge" type="number" inputmode="numeric" placeholder="e.g. 24" class="calc-input w-full rounded-xl px-4 py-3 text-sm outline-none">
+          </div>
+          <div>
+            <label class="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2 block">Gender</label>
+            <select id="calGender" class="calc-input w-full rounded-xl px-4 py-3 text-sm outline-none">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2 block">Height (cm)</label>
+            <input id="calHeight" type="number" inputmode="decimal" placeholder="e.g. 170" class="calc-input w-full rounded-xl px-4 py-3 text-sm outline-none">
+          </div>
+          <div>
+            <label class="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2 block">Weight (kg)</label>
+            <input id="calWeight" type="number" inputmode="decimal" placeholder="e.g. 65" class="calc-input w-full rounded-xl px-4 py-3 text-sm outline-none">
+          </div>
+          <div class="sm:col-span-2">
+            <label class="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2 block">Activity Level</label>
+            <select id="calActivity" class="calc-input w-full rounded-xl px-4 py-3 text-sm outline-none">
+              <option value="1.2">Sedentary (little or no exercise)</option>
+              <option value="1.375">Light (1&ndash;3 days/week)</option>
+              <option value="1.55" selected>Moderate (3&ndash;5 days/week)</option>
+              <option value="1.725">Active (6&ndash;7 days/week)</option>
+              <option value="1.9">Very Active (physical job + training)</option>
+            </select>
+          </div>
+        </div>
+        <button type="button" onclick="calcCalories()" class="btn-gold font-bold rounded-full px-7 py-3 text-sm uppercase tracking-wide">Calculate Calories</button>
+        <div id="calResult" class="hidden mt-6 grid sm:grid-cols-3 gap-4">
+          <div class="bg-charcoal border border-line rounded-2xl p-5">
+            <p class="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-1">Maintenance</p>
+            <p id="calMaintain" class="font-display text-2xl sm:text-3xl text-gold"></p>
+            <p class="text-zinc-500 text-xs mt-1">kcal / day</p>
+          </div>
+          <div class="bg-charcoal border border-line rounded-2xl p-5">
+            <p class="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-1">Fat Loss</p>
+            <p id="calLoss" class="font-display text-2xl sm:text-3xl text-gold"></p>
+            <p class="text-zinc-500 text-xs mt-1">kcal / day</p>
+          </div>
+          <div class="bg-charcoal border border-line rounded-2xl p-5">
+            <p class="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-1">Muscle Gain</p>
+            <p id="calGain" class="font-display text-2xl sm:text-3xl text-gold"></p>
+            <p class="text-zinc-500 text-xs mt-1">kcal / day</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="panel-water" class="calc-panel">
+        <div class="grid sm:grid-cols-2 gap-4 mb-6">
+          <div>
+            <label class="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2 block">Weight (kg)</label>
+            <input id="waterWeight" type="number" inputmode="decimal" placeholder="e.g. 65" class="calc-input w-full rounded-xl px-4 py-3 text-sm outline-none">
+          </div>
+          <div>
+            <label class="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2 block">Activity Level</label>
+            <select id="waterActivity" class="calc-input w-full rounded-xl px-4 py-3 text-sm outline-none">
+              <option value="0">Light / Desk-based</option>
+              <option value="0.35" selected>Moderate Training</option>
+              <option value="0.7">Intense Training / Hot Climate</option>
+            </select>
+          </div>
+        </div>
+        <button type="button" onclick="calcWater()" class="btn-gold font-bold rounded-full px-7 py-3 text-sm uppercase tracking-wide">Calculate Intake</button>
+        <div id="waterResult" class="hidden mt-6 bg-charcoal border border-line rounded-2xl p-5 sm:p-6 flex items-center gap-4">
+          <svg class="w-9 h-9 text-gold shrink-0"><use href="#i-droplet"/></svg>
+          <div>
+            <p id="waterValue" class="font-display text-3xl sm:text-4xl text-gold"></p>
+            <p class="text-zinc-500 text-xs mt-1">liters recommended per day</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="foil-divider"></div>
+
+<!-- ================= MEMBERSHIP PLANS ================= -->
+<section id="membership" class="py-20 sm:py-24 md:py-32 bg-ink">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div id="membership-plans" class="max-w-2xl mb-12 sm:mb-16 mx-auto text-center reveal" data-reveal="up">
+      <span class="eyebrow">Membership Plans</span>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl mt-3">PICK YOUR <span class="text-gold">PLAN</span></h2>
+      <p class="text-zinc-400 mt-4">Fill the form below and we'll reach out on WhatsApp instantly.</p>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-5 gap-3.5 sm:gap-5 mb-12 sm:mb-16">
+      <div class="reveal plan-card bg-charcoal-2 border border-line rounded-2xl p-4 sm:p-6 flex flex-col cut-corner-sm" data-reveal="up" data-plan="1 Month - NPR 1,200">
+        <p class="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-zinc-500 mb-2">1 Month</p>
+        <p class="font-display text-2xl sm:text-3xl mb-4">NPR 1,200</p>
+        <ul class="space-y-2 text-xs text-zinc-400 flex-1 mb-5">
+          <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-gold mt-0.5 shrink-0"><use href="#i-check"/></svg>Full gym access</li>
+        </ul>
+        <button type="button" class="select-plan-btn text-center border border-zinc-600 hover:border-gold rounded-full py-2.5 text-[11px] sm:text-xs font-bold transition uppercase tracking-wide">Select</button>
+      </div>
+      <div class="reveal plan-card bg-charcoal-2 border border-line rounded-2xl p-4 sm:p-6 flex flex-col cut-corner-sm" data-reveal="up" style="transition-delay:.05s" data-plan="3 Months - NPR 3,200 (Free Protein)">
+        <p class="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-zinc-500 mb-2">3 Months</p>
+        <p class="font-display text-2xl sm:text-3xl mb-1">NPR 3,200</p>
+        <p class="text-gold text-[11px] sm:text-xs font-mono mb-3">+ Free Protein</p>
+        <ul class="space-y-2 text-xs text-zinc-400 flex-1 mb-5">
+          <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-gold mt-0.5 shrink-0"><use href="#i-check"/></svg>Full gym access</li>
+        </ul>
+        <button type="button" class="select-plan-btn text-center border border-zinc-600 hover:border-gold rounded-full py-2.5 text-[11px] sm:text-xs font-bold transition uppercase tracking-wide">Select</button>
+      </div>
+      <div class="reveal plan-card relative bg-gradient-to-b from-charcoal-2 to-[#241d0a] border-2 border-gold rounded-2xl p-4 sm:p-6 flex flex-col cut-corner-sm" data-reveal="up" style="transition-delay:.1s" data-plan="6 Months - NPR 5,600 (Free Protein + Shaker)">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-black text-[9px] sm:text-[10px] font-bold uppercase tracking-widest px-2.5 sm:px-3 py-1 rounded-full whitespace-nowrap">Best Value</span>
+        <p class="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-gold mb-2">6 Months</p>
+        <p class="font-display text-2xl sm:text-3xl mb-1">NPR 5,600</p>
+        <p class="text-gold text-[11px] sm:text-xs font-mono mb-3">+ Protein &amp; Shaker</p>
+        <ul class="space-y-2 text-xs text-zinc-300 flex-1 mb-5">
+          <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-gold mt-0.5 shrink-0"><use href="#i-check"/></svg>Full gym access</li>
+        </ul>
+        <button type="button" class="select-plan-btn text-center btn-gold rounded-full py-2.5 text-[11px] sm:text-xs font-bold transition uppercase tracking-wide">Select</button>
+      </div>
+      <div class="reveal plan-card bg-charcoal-2 border border-line rounded-2xl p-4 sm:p-6 flex flex-col cut-corner-sm" data-reveal="up" style="transition-delay:.15s" data-plan="12 Months (Annual) - NPR 10,500 (Free Protein + Gym Bag)">
+        <p class="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-zinc-500 mb-2">12 Months</p>
+        <p class="font-display text-2xl sm:text-3xl mb-1">NPR 10,500</p>
+        <p class="text-gold text-[11px] sm:text-xs font-mono mb-3">+ Protein &amp; Bag</p>
+        <ul class="space-y-2 text-xs text-zinc-400 flex-1 mb-5">
+          <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-gold mt-0.5 shrink-0"><use href="#i-check"/></svg>Full gym access</li>
+        </ul>
+        <button type="button" class="select-plan-btn text-center border border-zinc-600 hover:border-gold rounded-full py-2.5 text-[11px] sm:text-xs font-bold transition uppercase tracking-wide">Select</button>
+      </div>
+      <div class="reveal plan-card bg-charcoal-2 border border-line rounded-2xl p-4 sm:p-6 flex flex-col cut-corner-sm col-span-2 lg:col-span-1" data-reveal="up" style="transition-delay:.2s" data-plan="Personal Training - NPR 5,999/month">
+        <p class="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-zinc-500 mb-2">Personal Training</p>
+        <p class="font-display text-2xl sm:text-3xl mb-1">NPR 5,999</p>
+        <p class="text-zinc-500 text-[11px] sm:text-xs font-mono mb-3">per month</p>
+        <ul class="space-y-2 text-xs text-zinc-400 flex-1 mb-5">
+          <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-gold mt-0.5 shrink-0"><use href="#i-check"/></svg>1-on-1 coaching</li>
+        </ul>
+        <button type="button" class="select-plan-btn text-center border border-zinc-600 hover:border-gold rounded-full py-2.5 text-[11px] sm:text-xs font-bold transition uppercase tracking-wide">Select</button>
+      </div>
+    </div>
+
+    <div class="reveal max-w-2xl mx-auto glass rounded-2xl p-6 sm:p-8 md:p-10" data-reveal="scale">
+      <h3 class="font-display text-xl sm:text-2xl md:text-3xl mb-2 text-center">JOIN NOW</h3>
+      <p class="text-zinc-400 text-sm text-center mb-7 sm:mb-8">We'll send your details straight to our WhatsApp for instant follow-up.</p>
+      <form id="joinForm" class="flex flex-col gap-4">
+        <input id="jName" type="text" placeholder="Your full name" required class="bg-white border border-white/10 rounded-xl px-4 py-3.5 text-sm text-gray-900 focus:border-gold outline-none transition placeholder:text-gray-400">
+        <input id="jPhone" type="tel" placeholder="Phone number" required class="bg-white border border-white/10 rounded-xl px-4 py-3.5 text-sm text-gray-900 focus:border-gold outline-none transition placeholder:text-gray-400">
+        <select id="jPlan" required class="bg-white border border-white/10 rounded-xl px-4 py-3.5 text-sm text-gray-900 focus:border-gold outline-none transition">
+          <option value="" disabled selected>Select a membership plan</option>
+          <option value="1 Month - NPR 1,200">1 Month &mdash; NPR 1,200</option>
+          <option value="3 Months - NPR 3,200 (Free Protein)">3 Months &mdash; NPR 3,200 (Free Protein)</option>
+          <option value="6 Months - NPR 5,600 (Free Protein + Shaker)">6 Months &mdash; NPR 5,600 (Free Protein + Shaker)</option>
+          <option value="12 Months (Annual) - NPR 10,500 (Free Protein + Gym Bag)">12 Months &mdash; NPR 10,500 (Free Protein + Gym Bag)</option>
+          <option value="Personal Training - NPR 5,999/month">Personal Training &mdash; NPR 5,999/month</option>
+        </select>
+        <button type="submit" class="btn-gold font-bold rounded-full py-4 text-sm uppercase tracking-wide transition-all duration-300 flex items-center justify-center gap-2 mt-2">
+          Submit &amp; Join Now <svg class="w-4 h-4"><use href="#i-send"/></svg>
+        </button>
+        <p id="formStatus" class="text-center text-xs font-mono text-gold hidden"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="foil-divider"></div>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section id="testimonials" class="py-20 sm:py-24 md:py-32 bg-charcoal">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-12 sm:mb-16 reveal" data-reveal="up">
+      <span class="eyebrow">Member Voices</span>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl mt-3">WHAT OUR <span class="text-gold">MEMBERS SAY</span></h2>
+    </div>
+
+    <div id="testimonialGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-14 sm:mb-16">
+      <div class="reveal bg-charcoal-2 border border-line rounded-2xl p-6 card-hover" data-reveal="up">
+        <svg class="w-7 h-7 text-gold/40 mb-3"><use href="#i-quote"/></svg>
+        <div class="testimonial-stars flex gap-1 text-gold mb-3">
+          <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+        </div>
+        <p class="text-zinc-300 text-sm leading-relaxed mb-5">"The trainers actually correct your form instead of watching the clock. Best gym I've trained at in Janakpur."</p>
+        <div class="flex items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&w=100&q=70" class="w-10 h-10 rounded-full object-cover" alt="" loading="lazy">
+          <div><p class="font-bold text-sm">Avishek jha</p><p class="text-zinc-500 font-mono text-xs">6-Month Member</p></div>
+        </div>
+      </div>
+      <div class="reveal bg-charcoal-2 border border-line rounded-2xl p-6 card-hover" data-reveal="up" style="transition-delay:.05s">
+        <svg class="w-7 h-7 text-gold/40 mb-3"><use href="#i-quote"/></svg>
+        <div class="testimonial-stars flex gap-1 text-gold mb-3">
+          <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+        </div>
+        <p class="text-zinc-300 text-sm leading-relaxed mb-5">"Clean, air-conditioned, never overcrowded. The diet plan alone was worth joining for."</p>
+        <div class="flex items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=70" class="w-10 h-10 rounded-full object-cover" alt="" loading="lazy">
+          <div><p class="font-bold text-sm">Anita sharma</p><p class="text-zinc-500 font-mono text-xs">Yearly Member</p></div>
+        </div>
+      </div>
+      <div class="reveal bg-charcoal-2 border border-line rounded-2xl p-6 card-hover sm:col-span-2 lg:col-span-1" data-reveal="up" style="transition-delay:.1s">
+        <svg class="w-7 h-7 text-gold/40 mb-3"><use href="#i-quote"/></svg>
+        <div class="testimonial-stars flex gap-1 text-gold mb-3">
+          <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star-outline"/></svg>
+        </div>
+        <p class="text-zinc-300 text-sm leading-relaxed mb-5">"Best equipment in Janakpur, hands down. The CrossFit sessions push me harder than I'd push myself alone."</p>
+        <div class="flex items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=70" class="w-10 h-10 rounded-full object-cover" alt="" loading="lazy">
+          <div><p class="font-bold text-sm">Ravi yadav</p><p class="text-zinc-500 font-mono text-xs">3-Month Member</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal max-w-2xl mx-auto bg-charcoal-2 border border-line rounded-2xl p-6 sm:p-8 md:p-10" data-reveal="scale">
+      <h3 class="font-display text-xl sm:text-2xl mb-2 text-center">SHARE YOUR EXPERIENCE</h3>
+      <p class="text-zinc-400 text-sm text-center mb-7">Tell other members what training here has been like.</p>
+      <form id="reviewForm" class="flex flex-col gap-4">
+        <input id="rvName" type="text" placeholder="Your name" required class="bg-white border border-white/10 rounded-xl px-4 py-3.5 text-sm text-gray-900 focus:border-gold outline-none transition placeholder:text-gray-400">
+
+        <div>
+          <label class="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2 block">Your Rating</label>
+          <div class="star-input" id="rvStars">
+            <input type="radio" id="rv5" name="rvRating" value="5"><label for="rv5" title="5 stars">&#9733;</label>
+            <input type="radio" id="rv4" name="rvRating" value="4"><label for="rv4" title="4 stars">&#9733;</label>
+            <input type="radio" id="rv3" name="rvRating" value="3" checked><label for="rv3" title="3 stars">&#9733;</label>
+            <input type="radio" id="rv2" name="rvRating" value="2"><label for="rv2" title="2 stars">&#9733;</label>
+            <input type="radio" id="rv1" name="rvRating" value="1"><label for="rv1" title="1 star">&#9733;</label>
+          </div>
+        </div>
+
+        <textarea id="rvText" rows="3" placeholder="Share your experience..." required class="bg-white border border-white/10 rounded-xl px-4 py-3.5 text-sm text-gray-900 focus:border-gold outline-none transition placeholder:text-gray-400 resize-none"></textarea>
+
+        <div>
+          <label class="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2 flex items-center gap-2"><svg class="w-3.5 h-3.5"><use href="#i-camera"/></svg>Photo (optional)</label>
+          <input id="rvPhoto" type="file" accept="image/*" class="text-xs text-zinc-400 font-mono w-full file:mr-3 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-gold file:text-black file:font-bold file:text-xs file:uppercase file:tracking-wide file:cursor-pointer">
+        </div>
+
+        <button type="submit" class="btn-gold font-bold rounded-full py-4 text-sm uppercase tracking-wide transition-all duration-300 flex items-center justify-center gap-2 mt-2">
+          Submit Review <svg class="w-4 h-4"><use href="#i-send"/></svg>
+        </button>
+        <p id="reviewStatus" class="text-center text-xs font-mono text-gold hidden"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SUPPLEMENT SHOP ================= -->
+<section id="shop" class="py-20 sm:py-24 md:py-32 bg-ink">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-5 sm:gap-6 mb-12 sm:mb-16 reveal" data-reveal="up">
+      <div class="max-w-xl">
+        <span class="eyebrow">The Protein Shop</span>
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl mt-3">SUPPLEMENT <span class="text-gold">SHOWCASE</span></h2>
+      </div>
+      <div class="glass rounded-xl px-4 sm:px-5 py-2.5 sm:py-3 flex items-center gap-2 tag-instore text-gold">
+        <svg class="w-4 h-4"><use href="#i-bag"/></svg> avilable in both gym and store
+      </div>
+    </div>
+
+    <!-- MAIN GRID CONTAINER -->
+    <div class="grid grid-cols-2 gap-3.5 sm:gap-5 mb-12 sm:mb-16">
+      
+      <!-- 1. Whey Protein -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up">
+        <img src="https://images.unsplash.com/photo-1579722820308-d74e571900a9?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Whey Protein" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Whey Protein</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 6,500</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <!-- 2. Creatine -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.05s">
+        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Creatine Monohydrate" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Creatine</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 2,800</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and storey</span>
+        </div>
+      </div>
+
+      <!-- 3. Mass Gainer -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.1s">
+        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Mass Gainer" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Mass Gainer</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 7,200</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <!-- 4. BCAA -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.15s">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="BCAA" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">BCAA</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,400</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <!-- 5. Pre-Workout -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and storey</span>
+        </div>
+      </div>
+
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and storey</span>
+        </div>
+      </div>
+
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 3,900</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+      <!-- 6. Peanut Butter -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.25s">
+        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=500&q=75" class="w-full h-32 sm:h-44 object-cover" alt="Peanut Butter" loading="lazy">
+        <div class="p-3.5 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base mb-1">Peanut Butter</h3>
+          <p class="text-gold font-display text-lg sm:text-xl mb-2">NPR 1,100</p>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">avilable in both gym and store</span>
+        </div>
+      </div>
+
+    </div>
+<!-- END OF MAIN GRID CONTAINER -->
+
+    <div class="reveal grid lg:grid-cols-2 gap-5 sm:gap-6" data-reveal="up">
+      <div class="glass rounded-2xl p-6 sm:p-7 space-y-5">
+        <h3 class="font-display text-lg sm:text-xl tracking-wide mb-2">VISIT THE STORE</h3>
+        <div class="flex items-start gap-4">
+          <svg class="w-5 h-5 text-gold shrink-0 mt-0.5"><use href="#i-pin"/></svg>
+          <p class="text-zinc-300 text-sm"> Between Murli Chowk and Citizen Bank, Janakpur-4, Nepal</p>
+        </div>
+        <div class="flex items-start gap-4">
+          <svg class="w-5 h-5 text-gold shrink-0 mt-0.5"><use href="#i-tiktok"/></svg>
+          <a href="https://www.tiktok.com/@proteinshop123" target="_blank" rel="noopener noreferrer" class="text-zinc-300 text-sm hover:text-gold transition">@proteinshop123</a>
+        </div>
+        <p class="tag-instore text-zinc-500 pt-2 border-t border-line">No home delivery or online checkout &mdash; visit the gym and store to purchase.</p>
+      </div>
+      <div class="rounded-2xl overflow-hidden border border-line h-56 sm:h-64 lg:h-auto">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3387.379413324212!2d85.9274808!3d26.7217499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ec41002f2e8683%3A0x9e608db616ebc89d!2sPROTEIN%20SHOP!5e1!3m2!1sen!2snp!4v1786957553164!5m2!1sen!2snp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="foil-divider"></div>
+
+<!-- ================= CTA BAND ================= -->
+<section class="py-14 sm:py-16 relative overflow-hidden" style="background:linear-gradient(100deg,#b8912c,#d4af37,#f2cf6b);">
+  <div class="max-w-4xl mx-auto px-5 md:px-8 text-center reveal" data-reveal="scale">
+    <h2 class="font-display text-3xl sm:text-4xl md:text-5xl text-black mb-4">READY TO START YOUR TRANSFORMATION?</h2>
+    <p class="text-black/70 mb-7 sm:mb-8 max-w-xl mx-auto text-sm sm:text-base">Walk in, train with our coaches, feel the difference.</p>
+    <a href="#membership" class="inline-flex items-center gap-2 bg-black text-white font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm uppercase tracking-wide hover:bg-zinc-900 transition">
+      Join Membership <svg class="w-4 h-4"><use href="#i-arrow-right"/></svg>
+    </a>
+  </div>
+</section>
+<!-- ================= RULES & DISCIPLINE ================= -->
+<section id="rules" class="py-20 sm:py-24 md:py-32 bg-ink relative overflow-hidden stripe-accent">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-12 sm:mb-16 reveal" data-reveal="up">
+      <span class="eyebrow">Floor Etiquette</span>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl mt-3">RULES <span class="text-gold">&amp; DISCIPLINE</span></h2>
+      <p class="text-zinc-400 mt-4">A clean, respectful floor is what makes serious training possible. Six rules, no exceptions.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+      <div class="reveal bg-charcoal border border-line rounded-2xl p-6 sm:p-7 card-hover flex gap-4" data-reveal="up">
+        <span class="rule-num">01</span>
+        <div>
+          <div class="w-10 h-10 rounded-lg bg-gold/15 flex items-center justify-center mb-3"><svg class="w-5 h-5 text-gold"><use href="#i-shield"/></svg></div>
+          <h3 class="font-bold text-base mb-1.5">Proper Attire</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">Gym shoes and appropriate workout attire required at all times.</p>
+        </div>
+      </div>
+      <div class="reveal bg-charcoal border border-line rounded-2xl p-6 sm:p-7 card-hover flex gap-4" data-reveal="up" style="transition-delay:.05s">
+        <span class="rule-num">02</span>
+        <div>
+          <div class="w-10 h-10 rounded-lg bg-gold/15 flex items-center justify-center mb-3"><svg class="w-5 h-5 text-gold"><use href="#i-check"/></svg></div>
+          <h3 class="font-bold text-base mb-1.5">Wipe Equipment</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">Clean machines, benches, and mats after every use.</p>
+        </div>
+      </div>
+      <div class="reveal bg-charcoal border border-line rounded-2xl p-6 sm:p-7 card-hover flex gap-4" data-reveal="up" style="transition-delay:.1s">
+        <span class="rule-num">03</span>
+        <div>
+          <div class="w-10 h-10 rounded-lg bg-gold/15 flex items-center justify-center mb-3"><svg class="w-5 h-5 text-gold"><use href="#i-dumbbell"/></svg></div>
+          <h3 class="font-bold text-base mb-1.5">Re-Rack Weights</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">Return every plate, dumbbell, and bar to its place.</p>
+        </div>
+      </div>
+      <div class="reveal bg-charcoal border border-line rounded-2xl p-6 sm:p-7 card-hover flex gap-4" data-reveal="up" style="transition-delay:.15s">
+        <span class="rule-num">04</span>
+        <div>
+          <div class="w-10 h-10 rounded-lg bg-gold/15 flex items-center justify-center mb-3"><svg class="w-5 h-5 text-gold"><use href="#i-zap"/></svg></div>
+          <h3 class="font-bold text-base mb-1.5">Respect the Floor</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">No shouting, no dropping weights carelessly, no distractions.</p>
+        </div>
+      </div>
+      <div class="reveal bg-charcoal border border-line rounded-2xl p-6 sm:p-7 card-hover flex gap-4" data-reveal="up" style="transition-delay:.2s">
+        <span class="rule-num">05</span>
+        <div>
+          <div class="w-10 h-10 rounded-lg bg-gold/15 flex items-center justify-center mb-3"><svg class="w-5 h-5 text-gold"><use href="#i-clock"/></svg></div>
+          <h3 class="font-bold text-base mb-1.5">Punctuality</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">Arrive on time for booked sessions and classes.</p>
+        </div>
+      </div>
+      <div class="reveal bg-charcoal border border-line rounded-2xl p-6 sm:p-7 card-hover flex gap-4" data-reveal="up" style="transition-delay:.25s">
+        <span class="rule-num">06</span>
+        <div>
+          <div class="w-10 h-10 rounded-lg bg-gold/15 flex items-center justify-center mb-3"><svg class="w-5 h-5 text-gold"><use href="#i-bag"/></svg></div>
+          <h3 class="font-bold text-base mb-1.5">Locker Etiquette</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">Secure your belongings &mdash; the gym isn't responsible for items left out.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="foil-divider"></div>
+
+<!-- ================= CONTACT / SOCIAL / MAP ================= -->
+<section id="contact" class="py-20 sm:py-24 md:py-32 bg-charcoal">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-12 sm:mb-16 reveal" data-reveal="up">
+      <span class="eyebrow">Get In Touch</span>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl mt-3">VISIT THE <span class="text-gold">GYM</span></h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-6 sm:gap-8">
+      <div class="reveal space-y-4 sm:space-y-5" data-reveal="left">
+        <div class="glass rounded-2xl p-5 sm:p-6 flex items-start gap-4">
+          <div class="w-11 h-11 rounded-xl bg-gold/15 flex items-center justify-center shrink-0"><svg class="w-5 h-5 text-gold"><use href="#i-pin"/></svg></div>
+          <div class="min-w-0 flex-1">
+            <p class="font-bold text-sm uppercase tracking-widest text-zinc-500 font-mono mb-1">Address</p>
+            <p class="text-zinc-200">Sarnchiya Kutti, Machha Bazar, near Bajaj Agency, Janakpur 45600</p>
+          </div>
+        </div>
+        <div class="glass rounded-2xl p-5 sm:p-6 flex items-start gap-4">
+          <div class="w-11 h-11 rounded-xl bg-gold/15 flex items-center justify-center shrink-0"><svg class="w-5 h-5 text-gold"><use href="#i-phone"/></svg></div>
+          <div class="min-w-0 flex-1">
+            <p class="font-bold text-sm uppercase tracking-widest text-zinc-500 font-mono mb-1">Phone / WhatsApp</p>
+            <a href="tel:+9779817680808" class="text-zinc-200 hover:text-gold transition">9817680808</a>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-4 sm:p-5 flex flex-col items-center gap-2 hover:border-gold/40 transition text-center">
+            <svg class="w-5 h-5 text-gold"><use href="#i-facebook"/></svg><p class="text-zinc-300 text-xs font-mono">Facebook</p>
+          </a>
+          <a href="https://www.tiktok.com/@the.dragon.fitnes" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-4 sm:p-5 flex flex-col items-center gap-2 hover:border-gold/40 transition text-center">
+            <svg class="w-5 h-5 text-gold"><use href="#i-tiktok"/></svg><p class="text-zinc-300 text-xs font-mono">TikTok</p>
+          </a>
+          <a href="https://www.instagram.com/thedragonfitnesscentre" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-4 sm:p-5 flex flex-col items-center gap-2 hover:border-gold/40 transition text-center">
+            <svg class="w-5 h-5 text-gold"><use href="#i-instagram"/></svg><p class="text-zinc-300 text-xs font-mono">Instagram</p>
+          </a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-4 sm:p-5 flex flex-col items-center gap-2 hover:border-gold/40 transition text-center">
+            <svg class="w-5 h-5 text-gold"><use href="#i-youtube"/></svg><p class="text-zinc-300 text-xs font-mono">YouTube</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal rounded-2xl overflow-hidden border border-line h-64 sm:h-72 lg:h-auto" data-reveal="right">
+        <iframe src="https://www.google.com/maps?q=THE+DRAGON+FITNESS+CENTER,+Janakpur&output=embed" width="100%" height="100%" style="border:0; min-height:280px;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Dragon Fitness Center location map"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-ink pt-16 sm:pt-20 pb-28 md:pb-10 border-t-2 relative overflow-hidden" style="border-image: linear-gradient(90deg, transparent, var(--gold), transparent) 1;">
+  <div class="absolute inset-x-0 top-0 h-px" style="background:linear-gradient(90deg, transparent, var(--gold), transparent);"></div>
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
+      <div class="sm:col-span-2">
+        <div class="flex items-center gap-2.5 mb-4">
+          <svg class="w-7 h-7 text-gold" viewBox="0 0 24 24"><use href="#i-flame"/></svg>
+          <span class="font-display text-lg">THE DRAGON <span class="text-gold">FITNESS</span></span>
+        </div>
+        <p class="text-zinc-500 text-sm max-w-sm leading-relaxed mb-6">The ultimate premium fitness experience in Janakpur &mdash; strength, discipline, and results.</p>
+        <div class="flex gap-3">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-circle text-gold" aria-label="Facebook"><svg class="w-4.5 h-4.5"><use href="#i-facebook"/></svg></a>
+          <a href="https://www.tiktok.com/@the.dragon.fitnes" target="_blank" rel="noopener noreferrer" class="social-circle text-gold" aria-label="TikTok"><svg class="w-4.5 h-4.5"><use href="#i-tiktok"/></svg></a>
+          <a href="https://www.instagram.com/thedragonfitnesscentre" target="_blank" rel="noopener noreferrer" class="social-circle text-gold" aria-label="Instagram"><svg class="w-4.5 h-4.5"><use href="#i-instagram"/></svg></a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="social-circle text-gold" aria-label="YouTube"><svg class="w-4.5 h-4.5"><use href="#i-youtube"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <p class="font-mono text-xs uppercase tracking-widest text-gold mb-4">Navigate</p>
+        <ul class="space-y-3 text-sm text-zinc-400">
+          <li><a href="#why" class="hover:text-gold transition">Why Us</a></li>
+          <li><a href="#about" class="hover:text-gold transition">About</a></li>
+          <li><a href="#membership" class="hover:text-gold transition">Membership</a></li>
+          <li><a href="#trainers" class="hover:text-gold transition">Trainers</a></li>
+          <li><a href="#tools" class="hover:text-gold transition">Tools</a></li>
+          <li><a href="#shop" class="hover:text-gold transition">Products</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-mono text-xs uppercase tracking-widest text-gold mb-4">Hours &amp; Contact</p>
+        <p class="text-sm text-zinc-400 mb-1">Sun &ndash; Fri: 5:00 AM &ndash; 9:00 PM</p>
+        <p class="text-sm text-zinc-400 mb-4">Saturday: Closed</p>
+        <a href="tel:+9779817680808" class="text-sm text-zinc-400 hover:text-gold transition block mb-1">9817680808</a>
+        <p class="text-sm text-zinc-400">Janakpur 45600, Nepal</p>
+      </div>
+    </div>
+    <div class="border-t border-line pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-zinc-600 text-xs">&copy; 2026 The Dragon Fitness Center. All rights reserved.</p>
+      <p class="text-zinc-600 text-xs font-mono">Janakpur, Nepal</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= FLOATING QUICK BUTTONS ================= -->
+<div class="fixed bottom-5 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col gap-3">
+  <a href="tel:+9779817680808" aria-label="Call Dragon Fitness Center" class="float-wrap float-btn flex items-center rounded-full bg-charcoal border border-gold/40 h-12 w-12 sm:h-14 sm:w-14 transition-all duration-300 hover:scale-105 overflow-hidden">
+    <span class="flex items-center justify-center h-12 w-12 sm:h-14 sm:w-14 shrink-0"><svg class="w-5 h-5 sm:w-6 sm:h-6 text-gold"><use href="#i-phone"/></svg></span>
+    <span class="float-label text-xs font-bold text-gold hidden sm:inline">Call Us</span>
+  </a>
+  <a href="https://wa.me/9779817680808?text=Hi%20Dragon%20Fitness%2C%20I%20have%20a%20question!" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="float-wrap float-btn pulse-ring flex items-center rounded-full bg-[#25D366] h-12 w-12 sm:h-14 sm:w-14 transition-all duration-300 hover:scale-105 overflow-hidden">
+    <span class="flex items-center justify-center h-12 w-12 sm:h-14 sm:w-14 shrink-0"><svg class="w-6 h-6 sm:w-7 sm:h-7 text-white"><use href="#i-whatsapp"/></svg></span>
+    <span class="float-label text-xs font-bold text-white hidden sm:inline">Chat Now</span>
+  </a>
+</div>
+
+<script>
+  (function(){
+    const glow = document.getElementById('cursorGlow');
+    if (!glow || window.matchMedia('(max-width: 768px)').matches) return;
+    let targetX = window.innerWidth / 2, targetY = window.innerHeight / 2;
+    let currentX = targetX, currentY = targetY, active = false;
+    window.addEventListener('mousemove', (e) => { targetX = e.clientX; targetY = e.clientY; active = true; }, { passive: true });
+    function loop(){
+      if (active) {
+        currentX += (targetX - currentX) * 0.12;
+        currentY += (targetY - currentY) * 0.12;
+        glow.style.setProperty('--mx', currentX + 'px');
+        glow.style.setProperty('--my', currentY + 'px');
+      }
+      requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
+  })();
+
+  (function(){
+    const root = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
+    const sunPath = '<path d="M12 3v2.2M12 18.8V21M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M3 12h2.2M18.8 12H21M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/><circle cx="12" cy="12" r="4.3"/>';
+    const moonPath = '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>';
+    function setTheme(mode){
+      if (mode === 'light') { root.setAttribute('data-theme', 'light'); icon.innerHTML = sunPath; toggle.setAttribute('aria-checked', 'true'); }
+      else { root.setAttribute('data-theme', 'dark'); icon.innerHTML = moonPath; toggle.setAttribute('aria-checked', 'false'); }
+    }
+    setTheme('dark');
+    toggle.addEventListener('click', () => { setTheme(root.getAttribute('data-theme') === 'light' ? 'dark' : 'light'); });
+  })();
+
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) navbar.classList.add('shadow-lg'); else navbar.classList.remove('shadow-lg');
+  }, { passive: true });
+
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden');
+    menuBtn.setAttribute('aria-expanded', String(!isOpen));
+    menuBtn.innerHTML = isOpen ? '<svg class="w-7 h-7"><use href="#i-menu"/></svg>' : '<svg class="w-7 h-7"><use href="#i-x"/></svg>';
+  });
+  document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    menuBtn.innerHTML = '<svg class="w-7 h-7"><use href="#i-menu"/></svg>';
+  }));
+
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const hash = link.getAttribute('href');
+      if (!hash || hash === '#') return;
+      const target = document.querySelector(hash);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (history.pushState) history.pushState(null, '', hash);
+    });
+  });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.target, 10);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1400;
+      const start = performance.now();
+      function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      counterIO.unobserve(el);
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('.count-up').forEach(el => counterIO.observe(el));
+
+  const jPlanSelect = document.getElementById('jPlan');
+  document.querySelectorAll('.select-plan-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('[data-plan]');
+      const planValue = card ? card.dataset.plan : '';
+      if (jPlanSelect && planValue) {
+        for (const opt of jPlanSelect.options) { if (opt.value === planValue) { jPlanSelect.value = planValue; break; } }
+      }
+      document.getElementById('joinForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      document.getElementById('jName').focus({ preventScroll: true });
+    });
+  });
+
+  const joinForm = document.getElementById('joinForm');
+  const formStatus = document.getElementById('formStatus');
+  joinForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('jName').value.trim();
+    const phone = document.getElementById('jPhone').value.trim();
+    const plan = document.getElementById('jPlan').value;
+    const messageLines = [
+      '🚨 NEW GYM MEMBERSHIP INQUIRY! 🚨',
+      '',
+      '👤 Client Name: ' + name,
+      '📞 Phone Number: ' + phone,
+      '📋 Selected Plan: ' + plan,
+      '',
+      '🔥NEW GYM LEAD : Please call or message this customer ASAP to lock in their membership! ✨'
+    ];
+    const url = 'https://wa.me/9779817680808?text=' + encodeURIComponent(messageLines.join('\n'));
+    window.open(url, '_blank');
+    formStatus.textContent = 'Sent! Opening WhatsApp to confirm your enrollment...';
+    formStatus.classList.remove('hidden');
+    setTimeout(() => { formStatus.classList.add('hidden'); }, 6000);
+    joinForm.reset();
+  });
+
+  function switchCalcTab(tab){
+    document.querySelectorAll('.calc-tab').forEach(btn => btn.setAttribute('aria-selected', btn.dataset.tab === tab ? 'true' : 'false'));
+    document.querySelectorAll('.calc-panel').forEach(panel => panel.classList.toggle('active', panel.id === 'panel-' + tab));
+  }
+  window.switchCalcTab = switchCalcTab;
+
+  function calcBMI(){
+    const h = parseFloat(document.getElementById('bmiHeight').value);
+    const w = parseFloat(document.getElementById('bmiWeight').value);
+    if (!h || !w || h <= 0 || w <= 0) return;
+    const bmi = w / Math.pow(h / 100, 2);
+    const result = document.getElementById('bmiResult');
+    const valueEl = document.getElementById('bmiValue');
+    const catEl = document.getElementById('bmiCategory');
+    valueEl.textContent = bmi.toFixed(1);
+    let category, color;
+    if (bmi < 18.5) { category = 'Underweight'; color = 'var(--warn)'; }
+    else if (bmi < 25) { category = 'Normal Weight'; color = 'var(--good)'; }
+    else if (bmi < 30) { category = 'Overweight'; color = 'var(--warn)'; }
+    else { category = 'Obese'; color = 'var(--bad)'; }
+    catEl.textContent = category;
+    catEl.style.color = color;
+    catEl.style.backgroundColor = 'rgba(255,255,255,0.06)';
+    catEl.style.border = '1px solid ' + color;
+    result.classList.remove('hidden');
+  }
+  window.calcBMI = calcBMI;
+
+  function calcCalories(){
+    const age = parseFloat(document.getElementById('calAge').value);
+    const gender = document.getElementById('calGender').value;
+    const h = parseFloat(document.getElementById('calHeight').value);
+    const w = parseFloat(document.getElementById('calWeight').value);
+    const activity = parseFloat(document.getElementById('calActivity').value);
+    if (!age || !h || !w) return;
+    let bmr = gender === 'male'
+      ? (10 * w) + (6.25 * h) - (5 * age) + 5
+      : (10 * w) + (6.25 * h) - (5 * age) - 161;
+    const maintain = Math.round(bmr * activity);
+    document.getElementById('calMaintain').textContent = maintain.toLocaleString();
+    document.getElementById('calLoss').textContent = Math.round(maintain - 500).toLocaleString();
+    document.getElementById('calGain').textContent = Math.round(maintain + 350).toLocaleString();
+    document.getElementById('calResult').classList.remove('hidden');
+  }
+  window.calcCalories = calcCalories;
+
+  function calcWater(){
+    const w = parseFloat(document.getElementById('waterWeight').value);
+    const extra = parseFloat(document.getElementById('waterActivity').value);
+    if (!w) return;
+    const liters = (w * 0.033) + extra;
+    document.getElementById('waterValue').textContent = liters.toFixed(1) + ' L';
+    document.getElementById('waterResult').classList.remove('hidden');
+  }
+  window.calcWater = calcWater;
+
+  const reviewForm = document.getElementById('reviewForm');
+  const reviewStatus = document.getElementById('reviewStatus');
+  const testimonialGrid = document.getElementById('testimonialGrid');
+
+  function starsSVG(count){
+    let out = '';
+    for (let i = 1; i <= 5; i++) out += '<svg><use href="#' + (i <= count ? 'i-star' : 'i-star-outline') + '"/></svg>';
+    return out;
+  }
+
+  reviewForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('rvName').value.trim();
+    const rating = parseInt(document.querySelector('input[name="rvRating"]:checked').value, 10);
+    const text = document.getElementById('rvText').value.trim();
+    const photoInput = document.getElementById('rvPhoto');
+    const initials = name.split(' ').map(p => p[0]).join('').slice(0, 2).toUpperCase() || 'M';
+
+    function renderCard(avatarHTML){
+      const card = document.createElement('div');
+      card.className = 'reveal in bg-charcoal-2 border border-line rounded-2xl p-6 card-hover';
+      card.style.borderColor = 'rgba(var(--gold-rgb), 0.5)';
+      card.innerHTML =
+        '<svg class="w-7 h-7 text-gold/40 mb-3"><use href="#i-quote"/></svg>' +
+        '<div class="testimonial-stars flex gap-1 text-gold mb-3">' + starsSVG(rating) + '</div>' +
+        '<p class="text-zinc-300 text-sm leading-relaxed mb-5">"' + text.replace(/</g, '&lt;') + '"</p>' +
+        '<div class="flex items-center gap-3">' + avatarHTML +
+        '<div><p class="font-bold text-sm">' + name.replace(/</g, '&lt;') + '</p><p class="text-zinc-500 font-mono text-xs">New Member</p></div></div>';
+      testimonialGrid.prepend(card);
+    }
+
+    const file = photoInput.files && photoInput.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        renderCard('<img src="' + ev.target.result + '" class="w-10 h-10 rounded-full object-cover" alt="">');
+      };
+      reader.readAsDataURL(file);
+    } else {
+      renderCard('<div class="w-10 h-10 rounded-full bg-gold/20 text-gold flex items-center justify-center font-bold text-xs">' + initials + '</div>');
+    }
+
+    // Send the review straight to the owner's WhatsApp
+    const reviewLines = [
+      '🏋️ *NEW GYM REVIEW RECEIVED* 🏋️',
+      '-----------------------------------',
+      '👤 *Name:* ' + name,
+      '⭐ *Rating:* ' + rating + '/5 Stars',
+      '💬 *Review:* ' + text,
+      '-----------------------------------',
+      '_Submitted via The Dragon Fitness Website_'
+    ];
+    const reviewUrl = 'https://wa.me/9779817680808?text=' + encodeURIComponent(reviewLines.join('\n'));
+    window.open(reviewUrl, '_blank');
+
+    reviewStatus.textContent = 'Thank you! Your review has been posted and sent to us on WhatsApp.';
+    reviewStatus.classList.remove('hidden');
+    setTimeout(() => { reviewStatus.classList.add('hidden'); }, 5000);
+    reviewForm.reset();
+  });
+</script>
+
+</body>
+</html>
