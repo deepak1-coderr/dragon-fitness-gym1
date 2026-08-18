@@ -33,6 +33,20 @@
     --warn:#facc15;
     --bad:#f87171;
   }
+  html[data-theme="light"]{
+    --ink:#f6f3ea;
+    --ink-rgb: 246,243,234;
+    --charcoal:#ffffff;
+    --charcoal-2:#f1ede1;
+    --line: rgba(180,140,30,0.25);
+    --gold:#b8860b;
+    --gold-bright:#d4af37;
+    --gold-rgb: 184,134,11;
+    --ember:#e35a1e;
+    --cream:#1a1712;
+    --muted:#5c5748;
+    --muted-2:#83806f;
+  }
   *{scroll-behavior:smooth; box-sizing:border-box;}
   html.js-ready{scroll-behavior:smooth;}
   html{ -webkit-text-size-adjust:100%; }
@@ -64,10 +78,12 @@
       radial-gradient(ellipse 600px 400px at 85% 90%, rgba(255,106,44,0.06), transparent 60%);
     transition: opacity .4s ease;
   }
+  html[data-theme="light"] body::before{ opacity:0.55; }
   body::after{
     content:""; position:fixed; inset:0; z-index:1; pointer-events:none; opacity:0.035; mix-blend-mode:overlay;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
+  html[data-theme="light"] body::after{ opacity:0.02; }
   .stripe-accent{ background-image: repeating-linear-gradient(115deg, rgba(var(--gold-rgb),0.05) 0 2px, transparent 2px 44px); }
   main, header, footer, section, #cursorGlow{ position:relative; z-index:2; }
 
@@ -95,7 +111,7 @@
 
   .cut-corner{ clip-path: polygon(0 0, 100% 0, 100% 88%, 92% 100%, 0 100%); }
   .cut-corner-sm{ clip-path: polygon(0 0, 100% 0, 100% 92%, 95% 100%, 0 100%); }
-  
+
   .glass{ background: rgba(var(--ink-rgb),0.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--line); }
 
   .btn-gold{ background: linear-gradient(100deg, var(--gold), var(--gold-bright)); color:#0b0b0b; }
@@ -129,6 +145,10 @@
   .pulse-ring{ animation: pulseRing 2.4s ease-out infinite; }
   @keyframes pulseRing{ 0%{ box-shadow: 0 0 0 0 rgba(37,211,102,0.45); } 70%{ box-shadow: 0 0 0 14px rgba(37,211,102,0); } 100%{ box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
 
+  .theme-switch{ position:relative; width:52px; height:28px; border-radius:999px; flex-shrink:0; background: var(--charcoal-2); border:1px solid var(--line); cursor:pointer; transition: background-color .35s ease, border-color .35s ease; }
+  .theme-switch-knob{ position:absolute; top:2px; left:2px; width:22px; height:22px; border-radius:50%; background: linear-gradient(135deg, var(--gold), var(--gold-bright)); display:flex; align-items:center; justify-content:center; color:#0b0b0b; transition: transform .35s cubic-bezier(.34,1.56,.64,1); }
+  html[data-theme="light"] .theme-switch-knob{ transform: translateX(24px); }
+  .theme-switch-knob svg{ width:13px; height:13px; }
 
   .rule-num{ font-family:'Anton',sans-serif; font-size:2.75rem; line-height:1; color: var(--gold); opacity:0.28; }
 
@@ -234,7 +254,11 @@
     </div>
 
     <div class="flex items-center gap-2 sm:gap-3">
-      <!-- Toggle button yahan se puri tarah hata diya gaya hai -->
+      <button id="themeToggle" class="theme-switch" role="switch" aria-checked="false" aria-label="Toggle light and dark mode">
+        <span class="theme-switch-knob">
+          <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </span>
+      </button>
 
       <a href="#membership" class="hidden md:inline-flex items-center gap-2 btn-gold font-bold text-xs sm:text-sm px-4 sm:px-6 py-2 sm:py-2.5 rounded-full transition-all duration-300 whitespace-nowrap">
         JOIN NOW <svg class="w-4 h-4"><use href="#i-arrow-right"/></svg>
@@ -472,7 +496,7 @@
           <li class="flex items-center gap-3 sm:col-span-2"><svg class="w-4 h-4 text-gold shrink-0"><use href="#i-scale"/></svg>Ladies Trainer</li>
           <li class="flex items-center gap-3 sm:col-span-2"><svg class="w-4 h-4 text-gold shrink-0"><use href="#i-scale"/></svg>Certified Trainer</li>
           <li class="flex items-center gap-3 sm:col-span-2"><svg class="w-4 h-4 text-gold shrink-0"><use href="#i-scale"/></svg>Targeted Oriented Workout Schedule</li>
-          <li class="flex items-center gap-3 sm:col-span-2"><svg class="w-4 h-4 text-gold shrink-0"><use href="#i-scale"/></svg>Professional Dietary Guidance.</li>
+          <li class="flex items-center gap-3 sm:col-span-2"><svg class="w-4 h-4 text-gold shrink-0"><use href="#i-scale"/></svg>Professional Dietary Guidance</li>
         </ul>
       </div>
 
@@ -790,6 +814,7 @@
         <p class="font-display text-2xl sm:text-3xl mb-4">NPR 1,500</p>
         <ul class="space-y-2 text-xs text-zinc-400 flex-1 mb-5">
           <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-gold mt-0.5 shrink-0"><use href="#i-check"/></svg>Full gym access</li>
+          
         </ul>
         <button type="button" class="select-plan-btn text-center border border-zinc-600 hover:border-gold rounded-full py-2.5 text-[11px] sm:text-xs font-bold transition uppercase tracking-wide">Select</button>
       </div>
@@ -800,7 +825,7 @@
         <p class="font-display text-2xl sm:text-3xl mb-4">NPR 4,000</p>
         <ul class="space-y-2 text-xs text-zinc-400 flex-1 mb-5">
           <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-gold mt-0.5 shrink-0"><use href="#i-check"/></svg>Full gym access</li>
-          <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-gold mt-0.5 shrink-0"><use href="#i-check"/></svg>1 packet protein</li>
+          <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-gold mt-0.5 shrink-0"><use href="#i-check"/></svg>1 Packet Protein</li>
         </ul>
         <button type="button" class="select-plan-btn text-center border border-zinc-600 hover:border-gold rounded-full py-2.5 text-[11px] sm:text-xs font-bold transition uppercase tracking-wide">Select</button>
       </div>
@@ -812,8 +837,8 @@
         <p class="font-display text-2xl sm:text-3xl mb-4">NPR 7,000</p>
         <ul class="space-y-2 text-xs text-zinc-300 flex-1 mb-5">
           <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-gold mt-0.5 shrink-0"><use href="#i-check"/></svg>Full gym access</li>
+          <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-gold mt-0.5 shrink-0"><use href="#i-check"/></svg>2 Packet Protein</li>
           <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-gold mt-0.5 shrink-0"><use href="#i-check"/></svg>Shaker bottle</li>
-          <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-gold mt-0.5 shrink-0"><use href="#i-check"/></svg>2 packet protein</li>
         </ul>
         <button type="button" class="select-plan-btn text-center btn-gold rounded-full py-2.5 text-[11px] sm:text-xs font-bold transition uppercase tracking-wide">Select</button>
       </div>
@@ -826,9 +851,8 @@
           <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-gold mt-0.5 shrink-0"><use href="#i-check"/></svg>Full gym access</li>
           <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-gold mt-0.5 shrink-0"><use href="#i-check"/></svg>Gym bag</li>
           <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-gold mt-0.5 shrink-0"><use href="#i-check"/></svg>Shaker bottle</li>
-          <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-gold mt-0.5 shrink-0"><use href="#i-check"/></svg>2 packet protein</li>
-          <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-gold mt-0.5 shrink-0"><use href="#i-check"/></svg>Wellcore creatine</li>
-    
+          <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-gold mt-0.5 shrink-0"><use href="#i-check"/></svg>Welcore creatine</li>
+          <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-gold mt-0.5 shrink-0"><use href="#i-check"/></svg>2 Packet Protein</li>
         </ul>
         <button type="button" class="select-plan-btn text-center border border-zinc-600 hover:border-gold rounded-full py-2.5 text-[11px] sm:text-xs font-bold transition uppercase tracking-wide">Select</button>
       </div>
@@ -1249,10 +1273,73 @@
         </div>
       </div>
 
-        <!-- 26. Chiaseed -->
+      <!-- 26. Chiaseed -->
       <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.25s">
         <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
-          <img src="gol1.jpeg" class="max-h-full max-w-full object-contain" alt="Chiaseed" loading="lazy">
+          <img src="chia.jpg" class="max-h-full max-w-full object-contain" alt="Chiaseed" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Chiaseed</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
+        </div>
+      </div>
+
+            <!-- 1 boottle -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.25s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="bott1.jpeg" class="max-h-full max-w-full object-contain" alt="Chiaseed" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Chiaseed</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
+        </div>
+      </div>
+
+         <!-- 2 boottle -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.25s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="bott2.jpeg" class="max-h-full max-w-full object-contain" alt="Chiaseed" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Chiaseed</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
+        </div>
+      </div>
+       <!-- 1bag -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.25s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="bag1.jpeg" class="max-h-full max-w-full object-contain" alt="Chiaseed" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Chiaseed</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
+        </div>
+      </div>
+
+               <!-- 2bag -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.25s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="bag2.jpeg" class="max-h-full max-w-full object-contain" alt="Chiaseed" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Chiaseed</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
+        </div>
+      </div>
+               <!-- 1goll -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.25s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="goll1.jpeg" class="max-h-full max-w-full object-contain" alt="Chiaseed" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Chiaseed</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
+        </div>
+      </div>
+               <!-- goll2 -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.25s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="goll2.jpeg" class="max-h-full max-w-full object-contain" alt="Chiaseed" loading="lazy">
         </div>
         <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
           <h3 class="font-bold text-sm sm:text-base mb-2">Chiaseed</h3>
@@ -1260,68 +1347,6 @@
         </div>
       </div>
       
-         <!--1bottle-->
-     <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
-        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
-          <img src="bott1.jpeg" class="max-h-full max-w-full object-contain" alt="Greentea" loading="lazy">
-        </div>
-        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
-          <h3 class="font-bold text-sm sm:text-base mb-2">Greentea</h3>
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
-        </div>
-      </div>
-   <!--2bottle-->
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
-        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
-          <img src="bott2.jpeg" class="max-h-full max-w-full object-contain" alt="Greentea" loading="lazy">
-        </div>
-        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
-          <h3 class="font-bold text-sm sm:text-base mb-2">Greentea</h3>
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
-        </div>
-      </div>
-   <!--1bag-->
-       <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
-        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
-          <img src="bag1.jpeg" class="max-h-full max-w-full object-contain" alt="Greentea" loading="lazy">
-        </div>
-        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
-          <h3 class="font-bold text-sm sm:text-base mb-2">Greentea</h3>
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
-        </div>
-      </div>
-      <!--2bag-->
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
-        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
-          <img src="bag2.jpeg" class="max-h-full max-w-full object-contain" alt="Greentea" loading="lazy">
-        </div>
-        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
-          <h3 class="font-bold text-sm sm:text-base mb-2">Greentea</h3>
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
-        </div>
-      </div>
-      <!--gol1-->
-            <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
-        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
-          <img src="gol1.jpeg" class="max-h-full max-w-full object-contain" alt="Greentea" loading="lazy">
-        </div>
-        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
-          <h3 class="font-bold text-sm sm:text-base mb-2">Greentea</h3>
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
-        </div>
-      </div>
-      <!--gol2-->
-        <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
-        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
-          <img src="gol2.jpeg" class="max-h-full max-w-full object-contain" alt="Greentea" loading="lazy">
-        </div>
-        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
-          <h3 class="font-bold text-sm sm:text-base mb-2">Greentea</h3>
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
-        </div>
-      </div>
- 
-
     </div>
   </div>
 </section>
