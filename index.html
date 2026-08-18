@@ -12,6 +12,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
+  html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
   :root{
     --ink:#0b0b0b;
     --ink-rgb: 11,11,11;
@@ -219,14 +223,15 @@
 <div id="cursorGlow"></div>
 
 <!-- ================= ANNOUNCEMENT TICKER ================= -->
+  <!--
 <div class="relative z-[60] bg-charcoal border-b border-line overflow-hidden py-2">
-  <div class="marquee-track font-mono text-xs sm:text-sm tracking-wide text-gold">
+  div class="marquee-track font-mono text-xs sm:text-sm tracking-wide text-gold">
     <span class="px-8 flex items-center gap-2 whitespace-nowrap"><svg class="w-3.5 h-3.5"><use href="#i-flame"/></svg> Special Offer: Join now and get exciting perks on memberships!</span>
     <span class="px-8 flex items-center gap-2 whitespace-nowrap"><svg class="w-3.5 h-3.5"><use href="#i-flame"/></svg> Free protein on 3-month plans and above &mdash; limited time!</span>
     <span class="px-8 flex items-center gap-2 whitespace-nowrap"><svg class="w-3.5 h-3.5"><use href="#i-flame"/></svg> Special Offer: Join now and get exciting perks on memberships!</span>
     <span class="px-8 flex items-center gap-2 whitespace-nowrap"><svg class="w-3.5 h-3.5"><use href="#i-flame"/></svg> Free protein on 3-month plans and above &mdash; limited time!</span>
   </div>
-</div>
+</div>-->
 
 <!-- ================= NAVIGATION ================= -->
 <header id="navbar" class="sticky top-0 z-50 transition-all duration-300 bg-ink-90 backdrop-blur border-b border-line">
@@ -900,249 +905,297 @@
     </div>
 
     <!-- MAIN GRID CONTAINER -->
-    <div class="grid grid-cols-2 gap-3.5 sm:gap-5 mb-12 sm:mb-16">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-5 mb-12 sm:mb-16">
       
       <!-- 1. Whey Protein -->
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up">
-        <img src="whey1.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Whey Protein" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Whey Protein</h3>
-    
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="whey1.jpg" class="max-h-full max-w-full object-contain" alt="Whey Protein" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Whey Protein</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
         </div>
       </div>
 
-      
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.05s">
-        <img src="whey2.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Creatine Monohydrate" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Whey Protein</h3>
-       
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and storey</span>
+      <!-- 2. Whey Protein -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.05s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="whey2.jpg" class="max-h-full max-w-full object-contain" alt="Whey Protein" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Whey Protein</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
         </div>
       </div>
 
-      
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.1s">
-        <img src="whey3.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Whey Protein" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Whey Protein</h3>
-
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+      <!-- 3. Whey Protein -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.1s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="whey3.jpg" class="max-h-full max-w-full object-contain" alt="Whey Protein" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Whey Protein</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
         </div>
       </div>
 
-      
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.15s">
-        <img src="whey4.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Whey Protein" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Whey Protein</h3>
-  
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+      <!-- 4. Whey Protein -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.15s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="whey4.jpg" class="max-h-full max-w-full object-contain" alt="Whey Protein" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Whey Protein</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
         </div>
       </div>
 
-  
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
-        <img src="whey5.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Whey Protein" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Whey Protein</h3>
-
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and storey</span>
+      <!-- 5. Whey Protein -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="whey5.jpg" class="max-h-full max-w-full object-contain" alt="Whey Protein" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Whey Protein</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
         </div>
       </div>
 
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
-        <img src="whey6.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Whey Protein" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Whey Protein</h3>
-
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+      <!-- 6. Whey Protein -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="whey6.jpg" class="max-h-full max-w-full object-contain" alt="Whey Protein" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Whey Protein</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
         </div>
       </div>
 
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
-        <img src="whey7.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Whey Protein</h3>
-     
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+      <!-- 7. Whey Protein -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="whey7.jpg" class="max-h-full max-w-full object-contain" alt="Whey Protein" loading="lazy">
         </div>
-      </div>
-     <!---mass--->
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
-        <img src="mass.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Mass gainer</h3>
-   
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Whey Protein</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
         </div>
       </div>
 
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
-        <img src="mass1.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Mass gainer</h3>
-
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+      <!-- 8. Mass Gainer -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="mass.jpg" class="max-h-full max-w-full object-contain" alt="Mass Gainer" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Mass gainer</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
         </div>
       </div>
 
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
-        <img src="mass2.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Mass gainer</h3>
-
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+      <!-- 9. Mass Gainer -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="mass1.jpg" class="max-h-full max-w-full object-contain" alt="Mass Gainer" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Mass gainer</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
         </div>
       </div>
 
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
-        <img src="mass3.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Mass gainer</h3>
-
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+      <!-- 10. Mass Gainer -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="mass2.jpg" class="max-h-full max-w-full object-contain" alt="Mass Gainer" loading="lazy">
         </div>
-      </div>
-     <!---prework--->
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
-        <img src="prework.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
-
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and storey</span>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Mass gainer</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
         </div>
       </div>
 
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
-        <img src="prework1.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Pre-Workout</h3>
-
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+      <!-- 11. Mass Gainer -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="mass3.jpg" class="max-h-full max-w-full object-contain" alt="Mass Gainer" loading="lazy">
         </div>
-      </div>
-   <!--peanut-->
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
-        <img src="peanut.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Protein peanut butter</h3>
-  
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Mass gainer</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
         </div>
       </div>
 
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
-        <img src="peanut1.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Protein peanut butter</h3>
-
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+      <!-- 12. Pre-Workout -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="prework.jpg" class="max-h-full max-w-full object-contain" alt="Pre-Workout" loading="lazy">
         </div>
-      </div>
-<!--oats-->
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
-        <img src="oats.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Protein Oats</h3>
-   
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Pre-Workout</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
         </div>
       </div>
 
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
-        <img src="oats1.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Protein Oats</h3>
- 
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+      <!-- 13. Pre-Workout -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="prework1.jpg" class="max-h-full max-w-full object-contain" alt="Pre-Workout" loading="lazy">
         </div>
-      </div>
-<!--creatin-->
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
-        <img src="cretein1.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Creatine</h3>
-        
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Pre-Workout</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
         </div>
       </div>
 
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
-        <img src="creatin2.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Creatine</h3>
-  
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+      <!-- 14. Peanut Butter -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="peanut.jpg" class="max-h-full max-w-full object-contain" alt="Protein Peanut Butter" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Protein peanut butter</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
         </div>
       </div>
 
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
-        <img src="creatin3.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Creatine</h3>
-      
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+      <!-- 15. Peanut Butter -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="peanut1.jpg" class="max-h-full max-w-full object-contain" alt="Protein Peanut Butter" loading="lazy">
         </div>
-      </div>
-<!---fishoil--->
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
-        <img src="fishoil.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Fishoiln</h3>
-         
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Protein peanut butter</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
         </div>
       </div>
 
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
-        <img src="fishoil1.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Fishoil</h3>
-          
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+      <!-- 16. Protein Oats -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="oats.jpg" class="max-h-full max-w-full object-contain" alt="Protein Oats" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Protein Oats</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
         </div>
       </div>
 
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
-        <img src="fishoil2.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Fishoil</h3>
-         
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+      <!-- 17. Protein Oats -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="oats1.jpg" class="max-h-full max-w-full object-contain" alt="Protein Oats" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Protein Oats</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
         </div>
       </div>
 
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
-        <img src="fishoil3.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Fishoil</h3>
-     
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+      <!-- 18. Creatine -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="cretein1.jpg" class="max-h-full max-w-full object-contain" alt="Creatine" loading="lazy">
         </div>
-      </div>
-<!---greentea--->
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.2s">
-        <img src="greentea.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Pre-Workout" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Greentea</h3>
-          
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Creatine</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
         </div>
       </div>
 
-      <!---chia--->
-      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover" data-reveal="up" style="transition-delay:.25s">
-        <img src="chia.jpg" class="w-full h-32 sm:h-44 object-cover" alt="Peanut Butter" loading="lazy">
-        <div class="p-3.5 sm:p-5">
-          <h3 class="font-bold text-sm sm:text-base mb-1">Chiaseed</h3>
-          
-          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1">available in both gym and store</span>
+      <!-- 19. Creatine -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="creatin2.jpg" class="max-h-full max-w-full object-contain" alt="Creatine" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Creatine</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
+        </div>
+      </div>
+
+      <!-- 20. Creatine -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="creatin3.jpg" class="max-h-full max-w-full object-contain" alt="Creatine" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Creatine</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
+        </div>
+      </div>
+
+      <!-- 21. Fishoil -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="fishoil.jpg" class="max-h-full max-w-full object-contain" alt="Fishoil" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Fishoil</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
+        </div>
+      </div>
+
+      <!-- 22. Fishoil -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="fishoil1.jpg" class="max-h-full max-w-full object-contain" alt="Fishoil" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Fishoil</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
+        </div>
+      </div>
+
+      <!-- 23. Fishoil -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="fishoil2.jpg" class="max-h-full max-w-full object-contain" alt="Fishoil" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Fishoil</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
+        </div>
+      </div>
+
+      <!-- 24. Fishoil -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="fishoil3.jpg" class="max-h-full max-w-full object-contain" alt="Fishoil" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Fishoil</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
+        </div>
+      </div>
+
+      <!-- 25. Greentea -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.2s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="greentea.jpg" class="max-h-full max-w-full object-contain" alt="Greentea" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Greentea</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
+        </div>
+      </div>
+
+      <!-- 26. Chiaseed -->
+      <div class="reveal bg-charcoal border border-line rounded-2xl overflow-hidden card-hover flex flex-col" data-reveal="up" style="transition-delay:.25s">
+        <div class="w-full h-40 sm:h-52 bg-zinc-900/60 p-3 flex items-center justify-center overflow-hidden">
+          <img src="chia.jpg" class="max-h-full max-w-full object-contain" alt="Chiaseed" loading="lazy">
+        </div>
+        <div class="p-3.5 sm:p-5 flex flex-col flex-grow justify-between">
+          <h3 class="font-bold text-sm sm:text-base mb-2">Chiaseed</h3>
+          <span class="tag-instore inline-block text-zinc-500 border border-zinc-700 rounded-full px-2 py-1 text-center">available in both gym and store</span>
         </div>
       </div>
 
     </div>
+  </div>
+</section>
 <!-- END OF MAIN GRID CONTAINER -->
 
     <div class="reveal grid lg:grid-cols-2 gap-5 sm:gap-6" data-reveal="up">
